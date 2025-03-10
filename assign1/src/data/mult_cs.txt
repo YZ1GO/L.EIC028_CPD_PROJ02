@@ -1,0 +1,840 @@
+Operation: Multiplication
+Dimensions: 600
+Time: 1.029 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.988 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 1.075 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.980 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.972 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.967 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.975 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.966 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.964 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 1.116 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.975 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.968 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 1.089 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.966 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.963 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 1.062 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.963 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.963 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 1.114 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 1.078 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.957 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.960 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.994 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.963 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 1.030 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 1.079 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.956 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.956 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.956 seconds
+
+Operation: Multiplication
+Dimensions: 600
+Time: 0.959 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.927 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.439 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.417 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.465 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.427 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.412 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.417 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.412 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.417 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.429 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.432 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.426 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.394 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.418 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.613 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.428 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.431 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.435 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.423 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.426 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.731 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.425 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 5.108 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.626 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.538 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.428 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.427 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 5.017 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.411 seconds
+
+Operation: Multiplication
+Dimensions: 1000
+Time: 4.408 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 13.080 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.716 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.642 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.694 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.850 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.645 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.576 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 14.136 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.619 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 13.837 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.654 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.645 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 13.992 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.576 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.705 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.640 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.634 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.642 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.622 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.589 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.542 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 13.208 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.889 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.633 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.501 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.645 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.649 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 13.277 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.556 seconds
+
+Operation: Multiplication
+Dimensions: 1400
+Time: 12.865 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.568 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.323 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.463 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.537 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.575 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.710 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.603 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.415 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 28.578 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 28.242 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.610 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.400 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.729 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.577 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.639 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.424 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.611 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.572 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.889 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.530 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.698 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.740 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 28.164 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.381 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.698 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.729 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 31.833 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.510 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.512 seconds
+
+Operation: Multiplication
+Dimensions: 1800
+Time: 27.693 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 50.891 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.105 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 50.949 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.237 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 53.807 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.256 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 53.682 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 50.893 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 50.796 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.098 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.184 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.678 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 50.873 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.232 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 50.883 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 50.792 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 50.822 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.574 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.113 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 50.993 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.488 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 50.799 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.791 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 50.934 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.079 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.179 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.147 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 58.036 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.012 seconds
+
+Operation: Multiplication
+Dimensions: 2200
+Time: 51.574 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.036 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.685 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.795 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.536 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 87.049 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 87.133 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 91.085 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 87.037 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.649 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.306 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 89.458 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.593 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 90.677 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.792 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.557 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.472 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.605 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.543 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.771 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 87.049 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.933 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 86.606 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 87.178 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 87.538 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 87.011 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 87.384 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 88.458 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 96.616 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 89.192 seconds
+
+Operation: Multiplication
+Dimensions: 2600
+Time: 87.698 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 136.848 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 138.338 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 138.049 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 140.574 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 139.606 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.489 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.901 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 145.534 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.360 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 133.845 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 136.005 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 135.726 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 139.130 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 143.299 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.939 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.889 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 135.001 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 135.215 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.836 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.314 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.824 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 136.200 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.282 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.372 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 135.851 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.137 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.115 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.808 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 134.335 seconds
+
+Operation: Multiplication
+Dimensions: 3000
+Time: 133.933 seconds
+

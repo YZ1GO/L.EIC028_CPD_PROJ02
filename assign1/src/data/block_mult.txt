@@ -1,0 +1,2520 @@
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.2821
+L1 DCM: 11752829997
+L2 DCM: 2987342684
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.9675
+L1 DCM: 11751667976
+L2 DCM: 2998618844
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.5111
+L1 DCM: 11782140749
+L2 DCM: 2851500734
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.0607
+L1 DCM: 11750867637
+L2 DCM: 2982328482
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.8547
+L1 DCM: 11755918717
+L2 DCM: 3002379038
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.1066
+L1 DCM: 11758515483
+L2 DCM: 2994755327
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.1734
+L1 DCM: 11774003691
+L2 DCM: 3001766080
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.3792
+L1 DCM: 11763105598
+L2 DCM: 2994966256
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.3349
+L1 DCM: 11776606252
+L2 DCM: 2992086852
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.618
+L1 DCM: 11787789472
+L2 DCM: 2861286438
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.4184
+L1 DCM: 11764328823
+L2 DCM: 2992813985
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.8422
+L1 DCM: 11755716712
+L2 DCM: 2997844422
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.6103
+L1 DCM: 11805254121
+L2 DCM: 2856252391
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.5834
+L1 DCM: 11811682202
+L2 DCM: 2869547080
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.9179
+L1 DCM: 11744489807
+L2 DCM: 2985711033
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.1793
+L1 DCM: 11765534578
+L2 DCM: 2992290836
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.1613
+L1 DCM: 11757275639
+L2 DCM: 2991230953
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.4735
+L1 DCM: 11781535156
+L2 DCM: 2851740676
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.1423
+L1 DCM: 11748194815
+L2 DCM: 2984873257
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.9041
+L1 DCM: 11751170605
+L2 DCM: 2966784553
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.2435
+L1 DCM: 11760298678
+L2 DCM: 3002316847
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.5491
+L1 DCM: 11780817467
+L2 DCM: 2861565272
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.1172
+L1 DCM: 11751431530
+L2 DCM: 2988119167
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.4036
+L1 DCM: 11744377339
+L2 DCM: 2983040488
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.2326
+L1 DCM: 11755588390
+L2 DCM: 3006814934
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.6758
+L1 DCM: 11784283736
+L2 DCM: 2853185523
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.2605
+L1 DCM: 11753844839
+L2 DCM: 2999419250
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 24.3768
+L1 DCM: 11809363387
+L2 DCM: 2864953488
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.4711
+L1 DCM: 11748145938
+L2 DCM: 2983916456
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 128
+Time: 25.2635
+L1 DCM: 11558829536
+L2 DCM: 2876333210
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.4058
+L1 DCM: 9432037593
+L2 DCM: 1668300011
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 20.1306
+L1 DCM: 9416147273
+L2 DCM: 1688854359
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 19.7536
+L1 DCM: 9396293413
+L2 DCM: 1517583550
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.436
+L1 DCM: 9433866457
+L2 DCM: 1667375924
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.1251
+L1 DCM: 9435729426
+L2 DCM: 1665772997
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 20.1283
+L1 DCM: 9429211933
+L2 DCM: 1685650725
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.1521
+L1 DCM: 9427267830
+L2 DCM: 1669209938
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.0821
+L1 DCM: 9429521370
+L2 DCM: 1651594524
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.0341
+L1 DCM: 9418607736
+L2 DCM: 1662554061
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 20.2552
+L1 DCM: 9132361661
+L2 DCM: 1472897702
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.3997
+L1 DCM: 9435727829
+L2 DCM: 1670480792
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.2202
+L1 DCM: 9433894249
+L2 DCM: 1662677081
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.4598
+L1 DCM: 9450401339
+L2 DCM: 1681820600
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.3586
+L1 DCM: 9449531922
+L2 DCM: 1669163285
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 19.7722
+L1 DCM: 9379227444
+L2 DCM: 1510170904
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 20.4149
+L1 DCM: 9401867255
+L2 DCM: 1505888436
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.4776
+L1 DCM: 9440946601
+L2 DCM: 1654573807
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 20.9963
+L1 DCM: 9412859029
+L2 DCM: 1657848795
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 20.2032
+L1 DCM: 9382795779
+L2 DCM: 1510167776
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.0117
+L1 DCM: 9411958094
+L2 DCM: 1657484842
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 19.9593
+L1 DCM: 9372539364
+L2 DCM: 1505119944
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 20.092
+L1 DCM: 9384110803
+L2 DCM: 1667954455
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.3072
+L1 DCM: 9438286424
+L2 DCM: 1667646254
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.4422
+L1 DCM: 9417933245
+L2 DCM: 1657056573
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.5562
+L1 DCM: 9428266746
+L2 DCM: 1664184644
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 21.3771
+L1 DCM: 9424155388
+L2 DCM: 1661847192
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 19.9335
+L1 DCM: 9380434260
+L2 DCM: 1512217818
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 20.8406
+L1 DCM: 9403146651
+L2 DCM: 1655997432
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 20.3206
+L1 DCM: 9384495490
+L2 DCM: 1668898879
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 256
+Time: 20.4301
+L1 DCM: 9407713125
+L2 DCM: 1671777408
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 33.0926
+L1 DCM: 9640423222
+L2 DCM: 1746181754
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 31.2109
+L1 DCM: 9605900590
+L2 DCM: 1701716797
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 28.1417
+L1 DCM: 9377205411
+L2 DCM: 906896642
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 28.5879
+L1 DCM: 9384358230
+L2 DCM: 905310200
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 33.1596
+L1 DCM: 9640809468
+L2 DCM: 1731930998
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 31.7999
+L1 DCM: 9607987922
+L2 DCM: 1704478827
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 31.5449
+L1 DCM: 9603407987
+L2 DCM: 1704375901
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 30.6013
+L1 DCM: 9433050560
+L2 DCM: 1559284618
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 28.3316
+L1 DCM: 9379320676
+L2 DCM: 905952848
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 32.1773
+L1 DCM: 9618965368
+L2 DCM: 1718748156
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 32.9485
+L1 DCM: 9624550373
+L2 DCM: 1722250024
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 30.8379
+L1 DCM: 9586330373
+L2 DCM: 1698391634
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 30.9588
+L1 DCM: 9575166578
+L2 DCM: 1690063916
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 28.1379
+L1 DCM: 9376272261
+L2 DCM: 904676027
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 33.1522
+L1 DCM: 9643578735
+L2 DCM: 1751909904
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 32.149
+L1 DCM: 9611258088
+L2 DCM: 1706343532
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 31.3071
+L1 DCM: 9597963332
+L2 DCM: 1707585426
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 31.3749
+L1 DCM: 9598773493
+L2 DCM: 1702342584
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 32.9962
+L1 DCM: 9635084370
+L2 DCM: 1737145072
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 32.4808
+L1 DCM: 9622595851
+L2 DCM: 1712777431
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 28.4369
+L1 DCM: 9372636770
+L2 DCM: 904774404
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 28.2706
+L1 DCM: 9377106796
+L2 DCM: 904379472
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 30.8295
+L1 DCM: 9583596287
+L2 DCM: 1697121216
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 31.1722
+L1 DCM: 9598183571
+L2 DCM: 1702231193
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 29.9897
+L1 DCM: 9423485345
+L2 DCM: 919234199
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 31.7616
+L1 DCM: 9617302476
+L2 DCM: 1725565497
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 30.8897
+L1 DCM: 9590530338
+L2 DCM: 1698496292
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 31.9979
+L1 DCM: 9623176029
+L2 DCM: 1732963671
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 31.4922
+L1 DCM: 9602424505
+L2 DCM: 1710083352
+
+Operation: Block Multiplication
+Dimensions: 4096
+Block Size: 512
+Time: 31.8409
+L1 DCM: 9605686476
+L2 DCM: 1703878671
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 81.6497
+L1 DCM: 39161894555
+L2 DCM: 9789520265
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.1926
+L1 DCM: 39148101099
+L2 DCM: 9785334743
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.2981
+L1 DCM: 39164496056
+L2 DCM: 9789079457
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 81.2087
+L1 DCM: 39290953668
+L2 DCM: 9376568517
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 81.8007
+L1 DCM: 38714810143
+L2 DCM: 9554221799
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 83.1484
+L1 DCM: 39217016704
+L2 DCM: 9763142613
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.3797
+L1 DCM: 39159060128
+L2 DCM: 9788166792
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.3692
+L1 DCM: 39142089293
+L2 DCM: 9767236104
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 83.3035
+L1 DCM: 39228419138
+L2 DCM: 9777396031
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.3979
+L1 DCM: 39159385131
+L2 DCM: 9781551012
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 81.7523
+L1 DCM: 39344460502
+L2 DCM: 9411480771
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.8658
+L1 DCM: 39182767524
+L2 DCM: 9761619524
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 83.2612
+L1 DCM: 39222643325
+L2 DCM: 9770551906
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 83.3573
+L1 DCM: 39224067070
+L2 DCM: 9779709812
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 81.2442
+L1 DCM: 39284136842
+L2 DCM: 9362469886
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.4458
+L1 DCM: 39168791418
+L2 DCM: 9802610934
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.716
+L1 DCM: 39188802432
+L2 DCM: 9798396322
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 81.2379
+L1 DCM: 39296363723
+L2 DCM: 9382115443
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.4436
+L1 DCM: 39166232928
+L2 DCM: 9792250325
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.1141
+L1 DCM: 39048522731
+L2 DCM: 9627868433
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.415
+L1 DCM: 39159739198
+L2 DCM: 9778740139
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.4313
+L1 DCM: 39168583135
+L2 DCM: 9796720224
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 83.3414
+L1 DCM: 39233334519
+L2 DCM: 9790862028
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 83.2453
+L1 DCM: 39227100716
+L2 DCM: 9784380253
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.8539
+L1 DCM: 39177248370
+L2 DCM: 9773506694
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 83.312
+L1 DCM: 39208489486
+L2 DCM: 9754641160
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.5943
+L1 DCM: 39144152333
+L2 DCM: 9756225975
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.4575
+L1 DCM: 39150840632
+L2 DCM: 9781811226
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 81.2678
+L1 DCM: 39266575490
+L2 DCM: 9365281296
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 128
+Time: 82.7353
+L1 DCM: 39151715882
+L2 DCM: 9734526304
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.8584
+L1 DCM: 31126299313
+L2 DCM: 5248340608
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.3217
+L1 DCM: 31156333252
+L2 DCM: 4831246700
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.9104
+L1 DCM: 31124933945
+L2 DCM: 5241426203
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.7258
+L1 DCM: 31173647418
+L2 DCM: 5251956903
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.6771
+L1 DCM: 31174763776
+L2 DCM: 5255566390
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 66.0335
+L1 DCM: 31144146529
+L2 DCM: 5245302459
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.3731
+L1 DCM: 31114379826
+L2 DCM: 4826958902
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 66.025
+L1 DCM: 31140309700
+L2 DCM: 5246687872
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.3421
+L1 DCM: 31223627526
+L2 DCM: 4841776090
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.7867
+L1 DCM: 31184093769
+L2 DCM: 5254589468
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.3602
+L1 DCM: 31007422526
+L2 DCM: 5057166769
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.708
+L1 DCM: 31176950137
+L2 DCM: 5254416029
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.2414
+L1 DCM: 31163659887
+L2 DCM: 4833749035
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.9124
+L1 DCM: 31132100150
+L2 DCM: 5244062191
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.4416
+L1 DCM: 31115412826
+L2 DCM: 4829575769
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.4915
+L1 DCM: 31114774147
+L2 DCM: 4826648088
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.3655
+L1 DCM: 31132608642
+L2 DCM: 4828976939
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.3532
+L1 DCM: 30907913607
+L2 DCM: 5120475679
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.749
+L1 DCM: 31184057817
+L2 DCM: 5258830384
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.68
+L1 DCM: 31173352582
+L2 DCM: 5251981124
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.6938
+L1 DCM: 31181745688
+L2 DCM: 5256037324
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.3702
+L1 DCM: 31118294372
+L2 DCM: 4827062060
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.4508
+L1 DCM: 31247480142
+L2 DCM: 4840893036
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.0199
+L1 DCM: 30801140481
+L2 DCM: 5051547186
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.5418
+L1 DCM: 31232369599
+L2 DCM: 4836365658
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.0979
+L1 DCM: 30814505956
+L2 DCM: 5055591244
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.4164
+L1 DCM: 31106171403
+L2 DCM: 4827487930
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.7812
+L1 DCM: 31151595710
+L2 DCM: 5247822768
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.7772
+L1 DCM: 31143645138
+L2 DCM: 5252291919
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 256
+Time: 65.7965
+L1 DCM: 31118815843
+L2 DCM: 5242621266
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 57.9937
+L1 DCM: 30440580753
+L2 DCM: 2641452850
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.5325
+L1 DCM: 30499270558
+L2 DCM: 3206397802
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.9701
+L1 DCM: 30481554329
+L2 DCM: 3194321598
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.5146
+L1 DCM: 30452945793
+L2 DCM: 2641884400
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.1404
+L1 DCM: 30500330009
+L2 DCM: 3190138375
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.1116
+L1 DCM: 30457534200
+L2 DCM: 3177817783
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 57.978
+L1 DCM: 30486199925
+L2 DCM: 3194909079
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.0762
+L1 DCM: 30458912598
+L2 DCM: 3174082208
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.7702
+L1 DCM: 30470898136
+L2 DCM: 3185851793
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.3104
+L1 DCM: 30501176658
+L2 DCM: 3205818439
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.4406
+L1 DCM: 30462948759
+L2 DCM: 3182532472
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 57.9754
+L1 DCM: 30483986228
+L2 DCM: 3194693279
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.3162
+L1 DCM: 30466676919
+L2 DCM: 3180641070
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.4796
+L1 DCM: 30505140317
+L2 DCM: 3204076600
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.8772
+L1 DCM: 30498624178
+L2 DCM: 3204576708
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.0199
+L1 DCM: 30456604776
+L2 DCM: 3176456472
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 57.8781
+L1 DCM: 30443935309
+L2 DCM: 2639395520
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.7396
+L1 DCM: 30471558964
+L2 DCM: 3186664207
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.0522
+L1 DCM: 30459835493
+L2 DCM: 3180295361
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.433
+L1 DCM: 30501907840
+L2 DCM: 3208403703
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.0328
+L1 DCM: 30459552229
+L2 DCM: 3177450648
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.1407
+L1 DCM: 30444043065
+L2 DCM: 2644178923
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.0266
+L1 DCM: 30465205813
+L2 DCM: 3182892920
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.5476
+L1 DCM: 30461582664
+L2 DCM: 2647703294
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.1673
+L1 DCM: 30440690584
+L2 DCM: 2642817837
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 60.192
+L1 DCM: 30506718160
+L2 DCM: 3213661716
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.2524
+L1 DCM: 30464026539
+L2 DCM: 3180825967
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.6545
+L1 DCM: 30475755300
+L2 DCM: 3189025324
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 58.0806
+L1 DCM: 30463141724
+L2 DCM: 3179364990
+
+Operation: Block Multiplication
+Dimensions: 6144
+Block Size: 512
+Time: 57.6196
+L1 DCM: 30167320149
+L2 DCM: 2733237419
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 196.993
+L1 DCM: 93581911640
+L2 DCM: 23203536582
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 213.309
+L1 DCM: 97777366625
+L2 DCM: 25952652947
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 212.614
+L1 DCM: 97927404135
+L2 DCM: 26055057457
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 207.802
+L1 DCM: 98274318248
+L2 DCM: 24799154039
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 211.937
+L1 DCM: 98074118014
+L2 DCM: 26109521545
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 209.004
+L1 DCM: 98100616255
+L2 DCM: 24973940158
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 210.723
+L1 DCM: 98089389230
+L2 DCM: 26081215029
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 206.154
+L1 DCM: 98373744090
+L2 DCM: 24764786183
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 210.897
+L1 DCM: 98066342291
+L2 DCM: 26102851520
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 211.03
+L1 DCM: 98056123787
+L2 DCM: 26091329946
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 206.112
+L1 DCM: 98392756463
+L2 DCM: 24763687140
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 210.937
+L1 DCM: 98052245775
+L2 DCM: 26079314382
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 206.479
+L1 DCM: 98258816395
+L2 DCM: 24764202374
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 210.9
+L1 DCM: 98069417895
+L2 DCM: 26094136813
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 210.902
+L1 DCM: 98090559044
+L2 DCM: 26082599458
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 210.979
+L1 DCM: 98060425722
+L2 DCM: 26087289762
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 206.163
+L1 DCM: 98344316236
+L2 DCM: 24769397737
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 212.536
+L1 DCM: 97729689549
+L2 DCM: 25912181865
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 211.119
+L1 DCM: 97986361578
+L2 DCM: 26056827413
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 210.947
+L1 DCM: 98055715603
+L2 DCM: 26078851727
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 199.386
+L1 DCM: 95178048982
+L2 DCM: 23734243125
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 208.481
+L1 DCM: 98078684826
+L2 DCM: 24787099183
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 212.435
+L1 DCM: 98116426617
+L2 DCM: 26315797541
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 212.494
+L1 DCM: 97764689474
+L2 DCM: 25905208383
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 212.377
+L1 DCM: 97747082508
+L2 DCM: 25912981271
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 212.298
+L1 DCM: 97748104020
+L2 DCM: 25904499011
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 211.203
+L1 DCM: 97985494841
+L2 DCM: 26051165474
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 210.956
+L1 DCM: 98051816233
+L2 DCM: 26083034267
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 210.959
+L1 DCM: 98038658802
+L2 DCM: 26103616402
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 128
+Time: 207.354
+L1 DCM: 96473415179
+L2 DCM: 25201265072
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 258.017
+L1 DCM: 84492225225
+L2 DCM: 22618152534
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 257.551
+L1 DCM: 84552065879
+L2 DCM: 22731132289
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 260.182
+L1 DCM: 84615132270
+L2 DCM: 22722733667
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 257.136
+L1 DCM: 84213291621
+L2 DCM: 22275199400
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 257.466
+L1 DCM: 84239977310
+L2 DCM: 22350967328
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 256.96
+L1 DCM: 84362686179
+L2 DCM: 22494709251
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 256.592
+L1 DCM: 84152391923
+L2 DCM: 22287470410
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 256.859
+L1 DCM: 84349461294
+L2 DCM: 22519211607
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 258.529
+L1 DCM: 84590995009
+L2 DCM: 22706568982
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 257.301
+L1 DCM: 84225837318
+L2 DCM: 22318847166
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 203.429
+L1 DCM: 79766621117
+L2 DCM: 13725015242
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 256.936
+L1 DCM: 84219859749
+L2 DCM: 22344333753
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 203.41
+L1 DCM: 79755207730
+L2 DCM: 13726893258
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 198.296
+L1 DCM: 79241685152
+L2 DCM: 14239604162
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 256.479
+L1 DCM: 84187440559
+L2 DCM: 22260844889
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 203.169
+L1 DCM: 79722750183
+L2 DCM: 13709741247
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 202.583
+L1 DCM: 79715997427
+L2 DCM: 13678119220
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 257.52
+L1 DCM: 84225410128
+L2 DCM: 22331565574
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 202.669
+L1 DCM: 79752560887
+L2 DCM: 13676719629
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 258.123
+L1 DCM: 84316049122
+L2 DCM: 22433036836
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 257.407
+L1 DCM: 84162208328
+L2 DCM: 22279854910
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 203.415
+L1 DCM: 79750952014
+L2 DCM: 13725318270
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 258.34
+L1 DCM: 84365044211
+L2 DCM: 22465296096
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 257.67
+L1 DCM: 84429369872
+L2 DCM: 22473054477
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 257.102
+L1 DCM: 84199363260
+L2 DCM: 22310210662
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 188.418
+L1 DCM: 77353890641
+L2 DCM: 18243980012
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 257.575
+L1 DCM: 84252551276
+L2 DCM: 22305294731
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 175.417
+L1 DCM: 75528476400
+L2 DCM: 11938454422
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 257.846
+L1 DCM: 84327008123
+L2 DCM: 22477343444
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 256
+Time: 257.936
+L1 DCM: 84305867417
+L2 DCM: 22338305724
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 431.855
+L1 DCM: 83534797588
+L2 DCM: 19240227335
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 433.22
+L1 DCM: 83531140803
+L2 DCM: 19221514558
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 423.519
+L1 DCM: 82889491611
+L2 DCM: 18166249627
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 431.812
+L1 DCM: 83574223245
+L2 DCM: 19284436490
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 364.758
+L1 DCM: 81140259973
+L2 DCM: 9542623644
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 431.598
+L1 DCM: 83646369324
+L2 DCM: 19343462288
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 431.426
+L1 DCM: 83634864055
+L2 DCM: 19339629543
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 431.809
+L1 DCM: 83539940621
+L2 DCM: 19247733845
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 431.592
+L1 DCM: 83554634172
+L2 DCM: 19263582699
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 365.161
+L1 DCM: 81204398926
+L2 DCM: 9591899359
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 432.5
+L1 DCM: 83578614048
+L2 DCM: 19281020583
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 431.749
+L1 DCM: 83559639572
+L2 DCM: 19259580831
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 431.46
+L1 DCM: 83543722836
+L2 DCM: 19252351188
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 432.378
+L1 DCM: 83635108855
+L2 DCM: 19323648959
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 433.309
+L1 DCM: 83488709458
+L2 DCM: 19217483799
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 432.013
+L1 DCM: 83556803642
+L2 DCM: 19278068392
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 365.37
+L1 DCM: 81229529161
+L2 DCM: 9609182603
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 365.734
+L1 DCM: 81112292998
+L2 DCM: 9515102348
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 432.011
+L1 DCM: 83571540426
+L2 DCM: 19279254974
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 365.917
+L1 DCM: 81141160888
+L2 DCM: 9547654724
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 366.003
+L1 DCM: 81268755551
+L2 DCM: 9648582468
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 432.338
+L1 DCM: 83596814761
+L2 DCM: 19309999603
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 432.285
+L1 DCM: 83669175237
+L2 DCM: 19357239665
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 366.037
+L1 DCM: 81221698955
+L2 DCM: 9603411548
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 426.217
+L1 DCM: 80213806303
+L2 DCM: 16438829443
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 434.216
+L1 DCM: 83524043224
+L2 DCM: 19270150855
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 432.21
+L1 DCM: 83466186674
+L2 DCM: 19107715516
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 431.859
+L1 DCM: 83537360499
+L2 DCM: 19241678455
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 432.233
+L1 DCM: 83548809243
+L2 DCM: 19246763457
+
+Operation: Block Multiplication
+Dimensions: 8192
+Block Size: 512
+Time: 365.815
+L1 DCM: 81112228604
+L2 DCM: 9525132412
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 379.773
+L1 DCM: 181286056755
+L2 DCM: 45405481076
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 380.873
+L1 DCM: 181372222386
+L2 DCM: 45400563381
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 384.533
+L1 DCM: 181679918005
+L2 DCM: 45368969990
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 382.208
+L1 DCM: 181497631641
+L2 DCM: 45391630779
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 384.14
+L1 DCM: 181638990512
+L2 DCM: 45368703509
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 381.681
+L1 DCM: 181377102585
+L2 DCM: 45393652975
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 376.544
+L1 DCM: 182008403056
+L2 DCM: 43495788654
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 375.898
+L1 DCM: 181972526972
+L2 DCM: 43471969430
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 380.43
+L1 DCM: 181320049424
+L2 DCM: 45355041959
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 381.264
+L1 DCM: 181476580633
+L2 DCM: 45382616235
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 375.197
+L1 DCM: 181871946705
+L2 DCM: 43418399423
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 379.786
+L1 DCM: 181253494698
+L2 DCM: 45407041481
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 379.787
+L1 DCM: 181277464656
+L2 DCM: 45423015580
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 379.816
+L1 DCM: 181318526036
+L2 DCM: 45408393530
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 380.275
+L1 DCM: 181309961594
+L2 DCM: 45392508372
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 374.969
+L1 DCM: 179205269822
+L2 DCM: 44328145245
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 380.173
+L1 DCM: 181338142856
+L2 DCM: 45407674304
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 374.997
+L1 DCM: 181870646817
+L2 DCM: 43403547973
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 375.308
+L1 DCM: 181838057271
+L2 DCM: 43400579184
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 380.384
+L1 DCM: 181309750785
+L2 DCM: 45397847127
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 381.675
+L1 DCM: 181512005614
+L2 DCM: 45389381797
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 383.229
+L1 DCM: 181673143643
+L2 DCM: 45319175662
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 379.675
+L1 DCM: 181268239666
+L2 DCM: 45409765825
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 379.882
+L1 DCM: 181258639706
+L2 DCM: 45389921164
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 372.614
+L1 DCM: 179590294214
+L2 DCM: 42129327440
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 377.865
+L1 DCM: 180161428453
+L2 DCM: 44816254929
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 373.898
+L1 DCM: 180282956027
+L2 DCM: 42635036248
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 378.188
+L1 DCM: 182200900146
+L2 DCM: 43608235999
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 379.833
+L1 DCM: 181276497678
+L2 DCM: 45402555324
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 128
+Time: 379.178
+L1 DCM: 182413998759
+L2 DCM: 43700462815
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 302.707
+L1 DCM: 144561126943
+L2 DCM: 24895154119
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 303.38
+L1 DCM: 143743373790
+L2 DCM: 23536211552
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.04
+L1 DCM: 144583922925
+L2 DCM: 24345691465
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.649
+L1 DCM: 144682740010
+L2 DCM: 24323689169
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 300.971
+L1 DCM: 144620920524
+L2 DCM: 24342846723
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 299.618
+L1 DCM: 144638685433
+L2 DCM: 22365887123
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.949
+L1 DCM: 144737392190
+L2 DCM: 24322483065
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.013
+L1 DCM: 144724741873
+L2 DCM: 24311456926
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 299.17
+L1 DCM: 144475503807
+L2 DCM: 22318961454
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 300.93
+L1 DCM: 144648214341
+L2 DCM: 24282139308
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 308.42
+L1 DCM: 143606787983
+L2 DCM: 23328406926
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 302.003
+L1 DCM: 144789806145
+L2 DCM: 24321254117
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 299.352
+L1 DCM: 144008967111
+L2 DCM: 23878176062
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.153
+L1 DCM: 144741833933
+L2 DCM: 24323227352
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 298.464
+L1 DCM: 144089148009
+L2 DCM: 22099662612
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.35
+L1 DCM: 144687858792
+L2 DCM: 24310560386
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 299.534
+L1 DCM: 144649304349
+L2 DCM: 22367621293
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 298.263
+L1 DCM: 143671734200
+L2 DCM: 21909771854
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.081
+L1 DCM: 144606608846
+L2 DCM: 24349108679
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 300.914
+L1 DCM: 144670778404
+L2 DCM: 24322400703
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 302.719
+L1 DCM: 143850383442
+L2 DCM: 23529511840
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.706
+L1 DCM: 144683882896
+L2 DCM: 24317879805
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.39
+L1 DCM: 144815942698
+L2 DCM: 24341041183
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 300.906
+L1 DCM: 144696765838
+L2 DCM: 24317419862
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.296
+L1 DCM: 144707924303
+L2 DCM: 24322227163
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 300.329
+L1 DCM: 144694929617
+L2 DCM: 22371217065
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.911
+L1 DCM: 144694163684
+L2 DCM: 24321666272
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 305.252
+L1 DCM: 144932316999
+L2 DCM: 24311371590
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 300.787
+L1 DCM: 144656827443
+L2 DCM: 24322054378
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 256
+Time: 301.498
+L1 DCM: 144828070017
+L2 DCM: 24409895908
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 262.464
+L1 DCM: 139868646448
+L2 DCM: 13560591645
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 263.745
+L1 DCM: 140477625687
+L2 DCM: 14025097355
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.861
+L1 DCM: 140862787036
+L2 DCM: 14438120815
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.959
+L1 DCM: 141085797415
+L2 DCM: 14741335663
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.151
+L1 DCM: 141036728253
+L2 DCM: 14621782117
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.287
+L1 DCM: 141045970242
+L2 DCM: 14624824083
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.106
+L1 DCM: 141067244930
+L2 DCM: 14651609322
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.737
+L1 DCM: 141066239743
+L2 DCM: 14736555785
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.691
+L1 DCM: 141079073520
+L2 DCM: 14736641654
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.043
+L1 DCM: 140882983229
+L2 DCM: 12248106464
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.964
+L1 DCM: 141100118781
+L2 DCM: 14743088295
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.913
+L1 DCM: 141082659026
+L2 DCM: 14682418198
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.289
+L1 DCM: 141052187691
+L2 DCM: 14632931827
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.168
+L1 DCM: 141070348463
+L2 DCM: 14638117893
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.188
+L1 DCM: 141033592615
+L2 DCM: 14626987747
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.677
+L1 DCM: 141092840160
+L2 DCM: 12213869080
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.35
+L1 DCM: 141043582910
+L2 DCM: 14635458348
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.184
+L1 DCM: 141049183805
+L2 DCM: 14626935889
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.96
+L1 DCM: 141038507874
+L2 DCM: 14554837972
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.586
+L1 DCM: 141077643722
+L2 DCM: 12213081516
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.217
+L1 DCM: 141027692048
+L2 DCM: 14626323468
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.366
+L1 DCM: 141089888323
+L2 DCM: 14635869940
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.407
+L1 DCM: 140915948568
+L2 DCM: 12403101545
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.868
+L1 DCM: 140841721304
+L2 DCM: 12256140011
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 264.845
+L1 DCM: 140896316309
+L2 DCM: 12250719530
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 263.378
+L1 DCM: 139812627020
+L2 DCM: 13472380401
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 261.882
+L1 DCM: 139374514169
+L2 DCM: 11567564731
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.955
+L1 DCM: 141096718172
+L2 DCM: 14645139453
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.766
+L1 DCM: 141048103800
+L2 DCM: 14653310699
+
+Operation: Block Multiplication
+Dimensions: 10240
+Block Size: 512
+Time: 265.196
+L1 DCM: 141079133959
+L2 DCM: 12224172011
+
