@@ -1,5 +1,10 @@
 package com.noiatalk;
 
+import com.noiatalk.models.Message;
+import com.noiatalk.models.Room;
+import com.noiatalk.services.AuthService;
+import com.noiatalk.services.RoomManager;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,8 +18,8 @@ import java.util.concurrent.Executors;
 public class Server implements Runnable {
     private final ArrayList<ConnectionHandler> connections;
     private ServerSocket server;
-    private boolean done;
     private ExecutorService pool;
+    private boolean done;
 
     public Server() {
         done = false;
@@ -34,7 +39,6 @@ public class Server implements Runnable {
             while (!done) {
                 Socket client = server.accept();
                 ConnectionHandler handler = new ConnectionHandler(client);
-                connections.add(handler);
                 pool.execute(handler);
             }
         } catch (Exception e) {
@@ -42,10 +46,13 @@ public class Server implements Runnable {
         }
     }
 
-    public void broadcast(String message) {
+    public void broadcast(Message message, Room room) {
+        if (room == null) return;
+
+        String formatted = message.getFormattedMessage();
         for (ConnectionHandler ch : connections) {
-            if (ch != null) {
-                ch.sendMessage(message);
+            if (ch != null && ch.getCurrentRoom() != null && ch.getCurrentRoom().equals(room)) {
+                ch.sendMessage(formatted);
             }
         }
     }
@@ -67,67 +74,199 @@ public class Server implements Runnable {
     }
 
     class ConnectionHandler implements Runnable {
-
         private final Socket client;
         private BufferedReader in;
         private PrintWriter out;
+        private String username;
+        private Room currentRoom;
 
         public ConnectionHandler(Socket client) {
             this.client = client;
-
         }
 
         @Override
         public void run() {
             try {
-                out = new PrintWriter(client.getOutputStream(), true);
-                in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-                out.println("Please enter a nickname: ");
-                String nickname = in.readLine();
-                System.out.println(nickname + " connected!");
-                broadcast(nickname + " joined the chat!");
-                String message;
-                while ((message = in.readLine()) != null) {
-                    if (message.startsWith("/nick")) {
-                        String[] messageSplit = message.split(" ", 2);
-                        if (messageSplit.length == 2) {
-                            broadcast(nickname + " renamed themselves to " + messageSplit[1]);
-                            System.out.println(nickname + " renamed themselves to " + messageSplit[1]);
-                            nickname = messageSplit[1];
-                            out.println("Successfully changed nickname to: " + nickname);
-                        } else {
-                            out.println("No nickname provided");
-                        }
-                    } else if (message.startsWith("/quit")) {
-                        broadcast(nickname + " left the chat!");
-                        shutdown();
-                    } else {
-                        broadcast(nickname + ": " + message);
-                    }
-                }
+                initializeStreams();
+                authenticateUser();
+                enterLobby();
             } catch (IOException e) {
-                shutdown();
+                logout();
             }
+        }
+
+        private void initializeStreams() throws IOException {
+            out = new PrintWriter(client.getOutputStream(), true);
+            in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+        }
+
+        private void authenticateUser() throws IOException {
+            while (true) {
+                out.println("Username: ");
+                String usernameInput = in.readLine();
+                out.println("Password: ");
+                String passwordInput = in.readLine();
+
+                if (AuthService.authenticate(usernameInput, passwordInput)) {
+                    this.username = usernameInput;
+                    synchronized (connections) {
+                        connections.add(this);
+                    }
+                    out.println("Login successful. You are now in the lobby");
+                    System.out.println(username + " logged in");
+                    break;
+                } else {
+                    out.println("Invalid credentials or user already logged in. Try again.");
+                }
+            }
+        }
+
+        private void enterLobby() throws IOException {
+            currentRoom = null;
+            out.println("\n====== LOBBY ======");
+            out.println("Available rooms:");
+            displayRooms();
+
+            String input;
+            while (true) {
+                input = promptInput("Enter a room name to join (or type '/quit' to exit):");
+                if (input == null) {
+                    logout();
+                    return;
+                }
+
+                input = input.trim();
+                if (input.equalsIgnoreCase("/quit")) {
+                    logout();
+                    return;
+                }
+
+                if (RoomManager.isValidRoom(input)) {
+                    joinRoom(input);
+                    handleChat();
+                    break;
+                } else {
+                    sendMessage("Invalid room name. Try again.");
+                }
+            }
+        }
+
+        private void displayRooms() { sendMessage(RoomManager.getAvailableRoomsList()); }
+
+        private void handleChat() throws IOException {
+            String message;
+            while (true) {
+                message = in.readLine();
+                if (message == null) {
+                    logout();
+                    return;
+                }
+
+                message = message.trim();
+                if (message.isEmpty()) continue;
+
+                if (handleRoomCommands(message)) {
+                    continue;
+                }
+
+                if (currentRoom != null) {
+                    broadcast(Message.createUserMessage(username, message), currentRoom);
+                } else {
+                    sendMessage("You are not in a room. This should not happen!");
+                }
+            }
+        }
+
+        private boolean handleRoomCommands(String message) {
+            if (message.equalsIgnoreCase("/room list")) {
+                displayRooms();
+                return true;
+            }
+
+            if (message.toLowerCase().startsWith("/room ")) {
+                String[] parts = message.split("\\s+", 2);
+                if (parts.length < 2 || parts[1].trim().isEmpty()) {
+                    sendMessage("Usage: /room <name>");
+                    return true;
+                }
+                String newRoomName = parts[1].trim();
+
+                if (RoomManager.isValidRoom(newRoomName)) {
+                    leaveRoom();
+                    joinRoom(newRoomName);
+                } else {
+                    sendMessage("Invalid room name: " + newRoomName);
+                }
+                return true;
+            }
+            return false;
+        }
+
+        private void joinRoom(String roomName) {
+            currentRoom = RoomManager.getRoom(roomName);
+            currentRoom.addUser(username);
+            sendMessage("\nRoom: " + roomName);
+            broadcast(Message.createSystemMessage(username + " joined the room"), currentRoom);
+            System.out.println(username + " joined the room " + currentRoom.getName());
+        }
+
+        private void leaveRoom() {
+            if (currentRoom != null) {
+                currentRoom.removeUser(username);
+                broadcast(Message.createSystemMessage(username + " left the room"), currentRoom);
+                System.out.println(username + " left the room " + currentRoom.getName());
+                currentRoom = null;
+            }
+        }
+
+        private String promptInput(String prompt) throws IOException {
+            sendMessage(prompt);
+            return in.readLine();
         }
 
         public void sendMessage(String message) {
             out.println(message);
         }
 
-        public void shutdown() {
-            try{
-                in.close();
-
-                out.close();
-                if(!client.isClosed()){
-                    client.close();
+        public void logout() {
+            try {
+                if (currentRoom != null) {
+                    currentRoom.removeUser(username);
+                    broadcast(Message.createSystemMessage(username + " left the chat"), currentRoom);
                 }
 
+                if (username != null) {
+                    synchronized (connections) {
+                        connections.remove(this);
+                    }
+                    AuthService.logout(username);
+                    System.out.println(username + " logged out");
+                    broadcast(Message.createSystemMessage(username + " left the chat"), currentRoom);
+                }
+
+                in.close();
+                out.close();
+                if (!client.isClosed()) {
+                    client.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public void shutdown() {
+            try{
+                if (in != null) in.close();
+                if (out != null) out.close();
+                if (!client.isClosed()) client.close();
             } catch (IOException e){
                 e.printStackTrace();
             }
         }
 
+        public Room getCurrentRoom() {
+            return currentRoom;
+        }
     }
 
     public static void main(String[] args) {
