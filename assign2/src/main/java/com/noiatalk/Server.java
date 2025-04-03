@@ -123,40 +123,34 @@ public class Server implements Runnable {
 
         private void enterLobby() throws IOException {
             currentRoom = null;
-            out.println("\n====== LOBBY ======");
-            out.println("Available rooms:");
             displayRooms();
 
-            String input;
             while (true) {
-                input = promptInput("Enter a room name to join (or type '/quit' to exit):");
+                String input = promptInput("Enter a command (e.g., /join <roomname> or /create <roomname>):");
                 if (input == null) {
                     logout();
                     return;
                 }
 
                 input = input.trim();
-                if (input.equalsIgnoreCase("/quit")) {
-                    logout();
-                    return;
-                }
-
-                if (RoomManager.isValidRoom(input)) {
-                    joinRoom(input);
+                if (!handleCommand(input)) {
+                    sendMessage("Invalid command. Use /join <roomname>, /create <roomname>, or /room list.");
+                } else if (currentRoom != null) {
+                    // Successfully joined a room, start chat
                     handleChat();
                     break;
-                } else {
-                    sendMessage("Invalid room name. Try again.");
                 }
             }
         }
 
-        private void displayRooms() { sendMessage(RoomManager.getAvailableRoomsList()); }
+        private void displayRooms() {
+            sendMessage("Available rooms:");
+            sendMessage(RoomManager.getAvailableRoomsList());
+        }
 
         private void handleChat() throws IOException {
-            String message;
             while (true) {
-                message = in.readLine();
+                String message = in.readLine();
                 if (message == null) {
                     logout();
                     return;
@@ -165,11 +159,11 @@ public class Server implements Runnable {
                 message = message.trim();
                 if (message.isEmpty()) continue;
 
-                if (handleRoomCommands(message)) {
-                    continue;
-                }
-
-                if (currentRoom != null) {
+                if (message.startsWith("/")) {
+                    if (!handleCommand(message)) {
+                        sendMessage("Invalid command. Try again.");
+                    }
+                } else if (currentRoom != null) {
                     broadcast(Message.createUserMessage(username, message), currentRoom);
                 } else {
                     sendMessage("You are not in a room. This should not happen!");
@@ -177,46 +171,108 @@ public class Server implements Runnable {
             }
         }
 
-        private boolean handleRoomCommands(String message) {
-            if (message.equalsIgnoreCase("/room list")) {
-                displayRooms();
-                return true;
-            }
+        private boolean handleCommand(String input) {
+            String[] parts = input.split("\\s+", 2);
+            String command = parts[0].toLowerCase();
+            String argument = (parts.length > 1) ? parts[1].trim() : null;
 
-            if (message.toLowerCase().startsWith("/room ")) {
-                String[] parts = message.split("\\s+", 2);
-                if (parts.length < 2 || parts[1].trim().isEmpty()) {
-                    sendMessage("Usage: /room <name>");
+            switch (command) {
+                case "/quit":
+                    logout();
                     return true;
-                }
-                String newRoomName = parts[1].trim();
 
-                if (RoomManager.isValidRoom(newRoomName)) {
-                    leaveRoom();
-                    joinRoom(newRoomName);
-                } else {
-                    sendMessage("Invalid room name: " + newRoomName);
-                }
-                return true;
+                case "/room":
+                    if (argument.equalsIgnoreCase("list")) {
+                        displayRooms();
+                        return true;
+                    }
+                    /*
+                    if (argument == null) {
+                        sendMessage("Usage: /room <name> or /room list");
+                        return true;
+                    }
+
+
+
+
+                    return switchRoom(argument);*/
+
+                case "/join":
+                    if (argument == null) {
+                        sendMessage("Usage: /join <roomname>");
+                        return true;
+                    }
+
+                    if (currentRoom == null) {
+                        joinRoom(argument);
+                    } else {
+                        switchRoom(argument);
+                    }
+                    return true;
+
+
+                case "/create":
+                    if (argument == null) {
+                        sendMessage("Usage: /create <roomname>");
+                        return true;
+                    }
+                    createRoom(argument);
+                    return true;
+
+                default:
+                    return false;
             }
-            return false;
         }
 
-        private void joinRoom(String roomName) {
+        private boolean switchRoom(String roomName) {
+            if (!RoomManager.isValidRoom(roomName)) {
+                sendMessage("Invalid room name: " + roomName);
+                return false;
+            }
+
+            leaveRoom();
+            return joinRoom(roomName);
+        }
+
+
+        private boolean joinRoom(String roomName) {
+            if (!RoomManager.isValidRoom(roomName)) {
+                sendMessage("Room '" + roomName + "' does not exist. Use /create <roomname> to create it.");
+                return false;
+            }
+
             currentRoom = RoomManager.getRoom(roomName);
             currentRoom.addUser(username);
-            sendMessage("\nRoom: " + roomName);
-            broadcast(Message.createSystemMessage(username + " joined the room"), currentRoom);
+            sendMessage("You have joined room: " + roomName);
+            broadcast(Message.createSystemMessage(username + " joined the room!"), currentRoom);
             System.out.println(username + " joined the room " + currentRoom.getName());
+            return true;
         }
 
         private void leaveRoom() {
             if (currentRoom != null) {
+                int userCount = currentRoom.getUserCount();
                 currentRoom.removeUser(username);
                 broadcast(Message.createSystemMessage(username + " left the room"), currentRoom);
                 System.out.println(username + " left the room " + currentRoom.getName());
+
+                if (userCount == 1 && !currentRoom.isSystem()) {
+                    System.out.println("Room " + currentRoom.getName() + " is now empty and will be deleted.");
+                    RoomManager.removeRoom(currentRoom.getName());
+                }
+
                 currentRoom = null;
             }
+        }
+
+        private boolean createRoom(String roomName) {
+            if (RoomManager.isValidRoom(roomName)) {
+                sendMessage("Room '" + roomName + "' already exists. Use /join <roomname> to enter.");
+                return false;
+            }
+
+            RoomManager.createRoom(roomName);
+            return joinRoom(roomName);
         }
 
         private String promptInput(String prompt) throws IOException {
