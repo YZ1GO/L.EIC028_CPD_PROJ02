@@ -1,7 +1,9 @@
 # NoiaTalk
 
 ## Configuration
-Before running the chat, ensure all necessary settings are configured in [config.json](config.json):
+Before running the chat, ensure all necessary settings are configured in [config.json](config.json). 
+
+Example:
 
 ```
 {
@@ -19,13 +21,13 @@ To enable AI-powered rooms, it is recommended to run a local LLM server using [L
 ### Server
 To start the chat server, run:
 ```bash
-    ./gradlew server
+./gradlew server
 ```
 
 ### Client
 To connect as a client, run:
 ```bash
-    ./gradlew client
+./gradlew client
 ```
 
 ### Authentication
