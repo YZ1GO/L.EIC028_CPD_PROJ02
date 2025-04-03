@@ -19,7 +19,7 @@ public class RoomManager {
             for (String line : Files.readAllLines(Path.of("config/rooms.cfg"))) {
                 line = line.trim();
                 if (!line.isEmpty() && !line.startsWith("#")) {
-                    activeRooms.put(line, new Room(line, true));
+                    activeRooms.put(line, new Room(line, true, false));
                 }
             }
         } catch (IOException e) {
@@ -49,9 +49,9 @@ public class RoomManager {
         return list.toString();
     }
 
-    public static void createRoom(String roomName) {
+    public static void createRoom(String roomName, boolean isAI) {
         if (!activeRooms.containsKey(roomName)) {
-            Room newRoom = new Room(roomName, false);
+            Room newRoom = new Room(roomName, false, isAI);
             activeRooms.put(roomName, newRoom);
         }
     }

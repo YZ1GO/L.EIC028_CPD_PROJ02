@@ -213,7 +213,7 @@ public class Server implements Runnable {
 
                 case "/create":
                     if (argument == null) {
-                        sendMessage("Usage: /create <roomname>");
+                        sendMessage("Usage: /create <roomname> [AI room : 0|1]");
                         return true;
                     }
                     createRoom(argument);
@@ -265,13 +265,25 @@ public class Server implements Runnable {
             }
         }
 
-        private boolean createRoom(String roomName) {
+        private boolean createRoom(String argument) {
+            String[] args = argument.split("\\s+");
+            String roomName = args[0].trim();
+            boolean isAI = false;
+
+            if (args.length > 1) {
+                if (args[1].equals("1")) {
+                    isAI = true;
+                } else {
+                    sendMessage("Invalid second argument. Use 1 to create an AI room.");
+                    return false;
+                }
+            }
             if (RoomManager.isValidRoom(roomName)) {
                 sendMessage("Room '" + roomName + "' already exists. Use /join <roomname> to enter.");
                 return false;
             }
 
-            RoomManager.createRoom(roomName);
+            RoomManager.createRoom(roomName, isAI);
             return joinRoom(roomName);
         }
 

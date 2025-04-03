@@ -4,14 +4,18 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Room {
-    private String name;
+    private final String name;
     private final Set<String> users;
     private final boolean isSystem;
+    private final boolean isAI;
+    private final StringBuilder chatHistory;
 
-    public Room(String name, boolean isSystem) {
+    public Room(String name, boolean isSystem, boolean isAI) {
         this.name = name;
         this.isSystem = isSystem;
+        this.isAI = isAI;
         this.users = new HashSet<>();
+        this.chatHistory = new StringBuilder();
     }
 
     public String getName() {
@@ -34,11 +38,19 @@ public class Room {
         return new HashSet<>(users);
     }
 
-    public boolean isSystem() {
+    public synchronized boolean isSystem() {
         return isSystem;
     }
 
-    public int getUserCount() {
+    public synchronized int getUserCount() {
         return users.size();
+    }
+
+    public synchronized boolean isAI() {
+        return isAI;
+    }
+
+    public synchronized StringBuilder getChatHistory() {
+        return chatHistory;
     }
 }
