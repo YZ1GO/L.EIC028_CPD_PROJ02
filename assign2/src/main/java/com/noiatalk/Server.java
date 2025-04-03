@@ -3,6 +3,8 @@ package com.noiatalk;
 import com.noiatalk.models.Message;
 import com.noiatalk.models.Room;
 import com.noiatalk.services.AuthService;
+import com.noiatalk.services.ConfigLoader;
+import com.noiatalk.services.LLMService;
 import com.noiatalk.services.RoomManager;
 
 import java.io.BufferedReader;
@@ -29,7 +31,9 @@ public class Server implements Runnable {
     @Override
     public void run() {
         try {
-            String portStr = System.getenv("SOCKET_PORT");
+            ConfigLoader.load("config.json");
+
+            String portStr = ConfigLoader.get("SOCKET_PORT");
             int port = (portStr != null) ? Integer.parseInt(portStr) : 9999;
 
             server = new ServerSocket(port);
@@ -165,6 +169,10 @@ public class Server implements Runnable {
                     }
                 } else if (currentRoom != null) {
                     broadcast(Message.createUserMessage(username, message), currentRoom);
+
+                    if (currentRoom.isAI()) {
+                        currentRoom.addMessage(username + ": " + message);
+                    }
                 } else {
                     sendMessage("You are not in a room. This should not happen!");
                 }
@@ -186,16 +194,8 @@ public class Server implements Runnable {
                         displayRooms();
                         return true;
                     }
-                    /*
-                    if (argument == null) {
-                        sendMessage("Usage: /room <name> or /room list");
-                        return true;
-                    }
-
-
-
-
-                    return switchRoom(argument);*/
+                    sendMessage("Usage: /room list");
+                    return true;
 
                 case "/join":
                     if (argument == null) {
@@ -219,8 +219,39 @@ public class Server implements Runnable {
                     createRoom(argument);
                     return true;
 
+                case "/ai":
+                    if (currentRoom == null || !currentRoom.isAI()) {
+                        sendMessage("This is not an AI-powered room.");
+                        return true;
+                    }
+                    if (argument == null) {
+                        sendMessage("Usage: /ai <message>");
+                        return true;
+                    }
+                    handleAIMessage(argument);
+                    return true;
+
                 default:
                     return false;
+            }
+        }
+
+        private void handleAIMessage(String userQuery) {
+            try {
+                String context = String.join("\n", currentRoom.getMessageHistory());
+                String prompt = "Chat history:\n" + context + "\n\nUser: " + userQuery;
+
+                // Call LLM for response
+                String llmResponse = LLMService.getLLMResponseContent(userQuery, prompt);
+
+                // Store AI response in history
+                currentRoom.addMessage("BOT: " + llmResponse);
+
+                // Broadcast AI message
+                broadcast(Message.createUserMessage("BOT", llmResponse), currentRoom);
+            } catch (Exception e) {
+                sendMessage("AI failed to respond.");
+                e.printStackTrace();
             }
         }
 
@@ -284,7 +315,11 @@ public class Server implements Runnable {
             }
 
             RoomManager.createRoom(roomName, isAI);
-            return joinRoom(roomName);
+
+            if (currentRoom == null) {
+                return joinRoom(roomName);
+            }
+            return switchRoom(roomName);
         }
 
         private String promptInput(String prompt) throws IOException {
@@ -341,6 +376,4 @@ public class Server implements Runnable {
         Server server = new Server();
         server.run();
     }
-
-
 }

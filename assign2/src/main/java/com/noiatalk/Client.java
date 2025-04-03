@@ -1,5 +1,7 @@
 package com.noiatalk;
 
+import com.noiatalk.services.ConfigLoader;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,11 +13,14 @@ public class Client implements Runnable{
     private BufferedReader in;
     private PrintWriter out;
     private boolean done;
+
     @Override
     public void run() {
         try{
-            String host = System.getenv("SOCKET_HOST");
-            String portStr = System.getenv("SOCKET_PORT");
+            ConfigLoader.load("config.json");
+
+            String host = ConfigLoader.get("SOCKET_HOST");
+            String portStr = ConfigLoader.get("SOCKET_PORT");
             if (host == null) host = "127.0.0.1";
             int port = (portStr != null) ? Integer.parseInt(portStr) : 9999;
 
@@ -36,6 +41,8 @@ public class Client implements Runnable{
 
         }catch (IOException e){
             shutdown();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 

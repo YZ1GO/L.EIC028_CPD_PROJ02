@@ -1,6 +1,8 @@
 package com.noiatalk.models;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Room {
@@ -8,14 +10,13 @@ public class Room {
     private final Set<String> users;
     private final boolean isSystem;
     private final boolean isAI;
-    private final StringBuilder chatHistory;
+    private final List<String> messageHistory = new ArrayList<>();
 
     public Room(String name, boolean isSystem, boolean isAI) {
         this.name = name;
         this.isSystem = isSystem;
         this.isAI = isAI;
         this.users = new HashSet<>();
-        this.chatHistory = new StringBuilder();
     }
 
     public String getName() {
@@ -50,7 +51,11 @@ public class Room {
         return isAI;
     }
 
-    public synchronized StringBuilder getChatHistory() {
-        return chatHistory;
+    public synchronized void addMessage(String message) {
+        messageHistory.add(message);
+    }
+
+    public synchronized List<String> getMessageHistory() {
+        return messageHistory;
     }
 }
