@@ -374,10 +374,10 @@ public class Server implements Runnable {
                         connections.remove(this);
                     }
                     AuthService.logout(username);
-                    System.out.println(username + " logged out");
                     //broadcast(Message.createSystemMessage(username + " left the chat"), currentRoom);
                 }
                 broadcast(Message.createSystemMessage(username + " left the chat"), currentRoom);
+                System.out.println(username + " logged out");
 
                 in.close();
                 out.close();
