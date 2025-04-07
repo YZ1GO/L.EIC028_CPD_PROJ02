@@ -106,21 +106,51 @@ public class Server implements Runnable {
 
         private void authenticateUser() throws IOException {
             while (true) {
-                out.println("Username: ");
-                String usernameInput = in.readLine();
-                out.println("Password: ");
-                String passwordInput = in.readLine();
+                out.println("Enter command: /login <username> <password> or /register <username> <password>");
+                String input = in.readLine();
+                if (input == null) continue;
 
-                if (AuthService.authenticate(usernameInput, passwordInput)) {
-                    this.username = usernameInput;
-                    synchronized (connections) {
-                        connections.add(this);
-                    }
-                    out.println("Login successful. You are now in the lobby");
-                    System.out.println(username + " logged in");
-                    break;
-                } else {
-                    out.println("Invalid credentials or user already logged in. Try again.");
+                String[] parts = input.trim().split("\\s+");
+                if (parts.length != 3) {
+                    out.println("Invalid command format. Try again.");
+                    continue;
+                }
+
+                String command = parts[0];
+                String usernameInput = parts[1];
+                String passwordInput = parts[2];
+
+                switch (command.toLowerCase()) {
+                    case "/login":
+                        if (AuthService.authenticate(usernameInput, passwordInput)) {
+                            this.username = usernameInput;
+                            synchronized (connections) {
+                                connections.add(this);
+                            }
+                            out.println("Login successful. You are now in the lobby");
+                            System.out.println(username + " logged in");
+                            return;
+                        } else {
+                            out.println("Invalid credentials or user already logged in. Try again.");
+                        }
+                        break;
+
+                    case "/register":
+                        if (AuthService.register(usernameInput, passwordInput)) {
+                            this.username = usernameInput;
+                            synchronized (connections) {
+                                connections.add(this);
+                            }
+                            out.println("Registration successful. You are now logged in.");
+                            System.out.println(username + " registered and logged in");
+                            return;
+                        } else {
+                            out.println("Username already exists. Try a different one.");
+                        }
+                        break;
+
+                    default:
+                        out.println("Unknown command. Use /login or /register.");
                 }
             }
         }
@@ -334,8 +364,9 @@ public class Server implements Runnable {
         public void logout() {
             try {
                 if (currentRoom != null) {
-                    currentRoom.removeUser(username);
-                    broadcast(Message.createSystemMessage(username + " left the chat"), currentRoom);
+                    //currentRoom.removeUser(username);
+                    leaveRoom();
+                    //broadcast(Message.createSystemMessage(username + " left the chat"), currentRoom);
                 }
 
                 if (username != null) {
@@ -344,8 +375,9 @@ public class Server implements Runnable {
                     }
                     AuthService.logout(username);
                     System.out.println(username + " logged out");
-                    broadcast(Message.createSystemMessage(username + " left the chat"), currentRoom);
+                    //broadcast(Message.createSystemMessage(username + " left the chat"), currentRoom);
                 }
+                broadcast(Message.createSystemMessage(username + " left the chat"), currentRoom);
 
                 in.close();
                 out.close();

@@ -1,5 +1,6 @@
 package com.noiatalk.services;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -41,6 +42,22 @@ public class AuthService {
         }
 
         return false;
+    }
+
+    public static boolean register(String username, String password) {
+        if (users.containsKey(username)) {
+            return false;
+        }
+
+        users.put(username, password);
+        /*try(FileWriter writer = new FileWriter("config/users.cfg", true)) {
+            writer.write(username + ":" + password + "\n");
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+            return false;
+        }*/
+
+        return true;
     }
 
     public static void logout(String username) {

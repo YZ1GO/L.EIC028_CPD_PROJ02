@@ -1,0 +1,2 @@
+## Notes
+These credentials are the default values that will be loaded every time the server starts. Any changes made during runtime will be lost upon restarting the server, and only these default credentials will persist.
