@@ -23,39 +23,39 @@ public class Room {
         return name;
     }
 
-    public synchronized void addUser(String username) {
+    public void addUser(String username) {
         users.add(username);
     }
 
-    public synchronized void removeUser(String username) {
+    public void removeUser(String username) {
         users.remove(username);
     }
 
-    public synchronized boolean hasUser(String username) {
+    public boolean hasUser(String username) {
         return users.contains(username);
     }
 
-    public synchronized Set<String> getUsers() {
+    public Set<String> getUsers() {
         return new HashSet<>(users);
     }
 
-    public synchronized boolean isSystem() {
+    public boolean isSystem() {
         return isSystem;
     }
 
-    public synchronized int getUserCount() {
+    public int getUserCount() {
         return users.size();
     }
 
-    public synchronized boolean isAI() {
+    public boolean isAI() {
         return isAI;
     }
 
-    public synchronized void addMessage(String message) {
+    public void addMessage(String message) {
         messageHistory.add(message);
     }
 
-    public synchronized List<String> getMessageHistory() {
+    public List<String> getMessageHistory() {
         return messageHistory;
     }
 }

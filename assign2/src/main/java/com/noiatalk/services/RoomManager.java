@@ -5,61 +5,95 @@ import com.noiatalk.models.Room;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class RoomManager {
-    private static final Map<String, Room> activeRooms = new HashMap<>();
+    private static final Map<String, Room> rooms = new HashMap<>();
+    private static final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
     static {
-        loadRooms();
-    }
-
-    private static void loadRooms() {
+        lock.writeLock().lock();
         try {
             for (String line : Files.readAllLines(Path.of("config/rooms.cfg"))) {
                 line = line.trim();
                 if (!line.isEmpty() && !line.startsWith("#")) {
-                    activeRooms.put(line, new Room(line, true, false));
+                    rooms.put(line, new Room(line, true, false));
                 }
             }
         } catch (IOException e) {
             System.err.println("Error loading rooms file: " + e.getMessage());
+        } finally {
+            lock.writeLock().unlock();
         }
     }
 
+
     public static Set<String> getAvailableRooms() {
-        return activeRooms.keySet();
+        lock.readLock().lock();
+        try {
+            return new HashSet<>(rooms.keySet());
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 
     public static boolean isValidRoom(String roomName) {
-        return activeRooms.containsKey(roomName);
+        lock.readLock().lock();
+        try {
+            return rooms.containsKey(roomName);
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 
     public static Room getRoom(String roomName) {
-        return activeRooms.get(roomName);
+        lock.readLock().lock();
+        try {
+            return rooms.get(roomName);
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 
     public static String getAvailableRoomsList() {
-        StringBuilder list = new StringBuilder();
-        for (String room : RoomManager.getAvailableRooms()) {
-            list.append("· ").append(room);
-            list.append("\n");
+        lock.readLock().lock();
+        try {
+            StringBuilder list = new StringBuilder();
+            for (String room : rooms.keySet()) {
+                list.append("· ").append(room).append("\n");
+            }
+            return !list.isEmpty() ? list.toString() : "No rooms available.";
+        } finally {
+            lock.readLock().unlock();
         }
-
-        return list.toString();
     }
 
     public static void createRoom(String roomName, boolean isAI) {
-        if (!activeRooms.containsKey(roomName)) {
-            Room newRoom = new Room(roomName, false, isAI);
-            activeRooms.put(roomName, newRoom);
+        lock.writeLock().lock();
+        try {
+            if (!rooms.containsKey(roomName)) {
+                Room newRoom = new Room(roomName, false, isAI);
+                rooms.put(roomName, newRoom);
+                System.out.println("Room '" + roomName + "' created.");
+            }
+        } finally {
+            lock.writeLock().unlock();
         }
     }
 
     public static void removeRoom(String roomName) {
-        if (activeRooms.containsKey(roomName)) {
-            activeRooms.remove(roomName);
-            System.out.println("Room '" + roomName + "' has been removed.");
+        lock.writeLock().lock();
+        try {
+            if (rooms.containsKey(roomName)) {
+                rooms.remove(roomName);
+                System.out.println("Room '" + roomName + "' has been removed.");
+            }
+        } finally {
+            lock.writeLock().unlock();
         }
     }
 }
