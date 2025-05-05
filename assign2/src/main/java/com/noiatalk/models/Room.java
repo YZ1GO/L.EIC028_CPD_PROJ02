@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class Room {
     private final String name;
@@ -11,6 +12,7 @@ public class Room {
     private final boolean isSystem;
     private final boolean isAI;
     private final List<String> messageHistory = new ArrayList<>();
+    private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
     public Room(String name, boolean isSystem, boolean isAI) {
         this.name = name;
@@ -20,42 +22,92 @@ public class Room {
     }
 
     public String getName() {
-        return name;
+        lock.readLock().lock();
+        try {
+            return name;
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 
     public void addUser(String username) {
-        users.add(username);
+        lock.writeLock().lock();
+        try {
+            users.add(username);
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 
     public void removeUser(String username) {
-        users.remove(username);
+        lock.writeLock().lock();
+        try {
+            users.remove(username);
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 
     public boolean hasUser(String username) {
-        return users.contains(username);
+        lock.readLock().lock();
+        try {
+            return users.contains(username);
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 
     public Set<String> getUsers() {
-        return new HashSet<>(users);
+        lock.readLock().lock();
+        try {
+            return new HashSet<>(users);
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 
     public boolean isSystem() {
-        return isSystem;
+        lock.readLock().lock();
+        try {
+            return isSystem;
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 
     public int getUserCount() {
-        return users.size();
+        lock.readLock().lock();
+        try {
+            return users.size();
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 
     public boolean isAI() {
-        return isAI;
+        lock.readLock().lock();
+        try {
+            return isAI;
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 
     public void addMessage(String message) {
-        messageHistory.add(message);
+        lock.writeLock().lock();
+        try {
+            messageHistory.add(message);
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 
     public List<String> getMessageHistory() {
-        return messageHistory;
+        lock.readLock().lock();
+        try {
+            return new ArrayList<>(messageHistory);
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 }
