@@ -1,4 +1,6 @@
-package com.noiatalk;
+package com.noiatalk.utils;
+
+import com.noiatalk.ConnectionHandler;
 
 import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantReadWriteLock;

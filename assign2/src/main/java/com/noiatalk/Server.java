@@ -3,6 +3,7 @@ package com.noiatalk;
 import com.noiatalk.models.Message;
 import com.noiatalk.models.Room;
 import com.noiatalk.services.ConfigLoader;
+import com.noiatalk.utils.ThreadSafeConnectionList;
 
 import java.io.FileInputStream;
 import java.io.IOException;
