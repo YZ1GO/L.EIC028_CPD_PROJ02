@@ -2,21 +2,22 @@ package com.noiatalk;
 
 import com.noiatalk.services.ConfigLoader;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.Socket;
 
-public class Client implements Runnable{
-    private Socket client;
+public class Client implements Runnable {
+    private SSLSocket client;
     private BufferedReader in;
     private PrintWriter out;
     private boolean done;
 
     @Override
     public void run() {
-        try{
+        try {
             ConfigLoader.load("config.json");
 
             String host = ConfigLoader.get("SOCKET_HOST");
@@ -24,10 +25,12 @@ public class Client implements Runnable{
             if (host == null) host = "127.0.0.1";
             int port = (portStr != null) ? Integer.parseInt(portStr) : 9999;
 
-            client = new Socket(host, port);
-            System.out.println("Successfully connected to " + client.getInetAddress().getHostAddress() + ":" + client.getPort() + "\n");
+            SSLSocketFactory factory = (SSLSocketFactory) SSLSocketFactory.getDefault();
+            client = (SSLSocket) factory.createSocket(host, port);
 
-            out = new PrintWriter(client.getOutputStream(),true);
+            System.out.println("Successfully connected to " + host + ":" + port);
+
+            out = new PrintWriter(client.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
             InputHandler inHandler = new InputHandler();
@@ -35,53 +38,50 @@ public class Client implements Runnable{
             t.start();
 
             String inMessage;
-            while ((inMessage = in.readLine()) != null){
+            while ((inMessage = in.readLine()) != null) {
                 System.out.println(inMessage);
             }
 
-        }catch (IOException e){
+        } catch (IOException e) {
             shutdown();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void shutdown(){
+    public void shutdown() {
         done = true;
         try {
-            in.close();
-            out.close();
-            if(!client.isClosed()){
+            if (in != null) in.close();
+            if (out != null) out.close();
+            if (client != null && !client.isClosed()) {
                 client.close();
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    class InputHandler implements Runnable{
+    class InputHandler implements Runnable {
         @Override
         public void run() {
-            try{
-                BufferedReader inReader = new BufferedReader(new InputStreamReader(System.in));
-                while (!done){
+            try (BufferedReader inReader = new BufferedReader(new InputStreamReader(System.in))) {
+                while (!done) {
                     String message = inReader.readLine();
-                    if(message.equals("/quit")){
+                    if (message.equals("/quit")) {
                         out.println(message);
-                        inReader.close();
                         shutdown();
-                    }else {
+                    } else {
                         out.println(message);
                     }
                 }
-            }catch (IOException e){
+            } catch (IOException e) {
                 shutdown();
             }
         }
     }
 
     public static void main(String[] args) {
-        Client client = new Client();
-        client.run();
+        new Client().run();
     }
 }

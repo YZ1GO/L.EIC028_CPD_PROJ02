@@ -4,9 +4,10 @@ import com.noiatalk.models.Message;
 import com.noiatalk.models.Room;
 import com.noiatalk.services.ConfigLoader;
 
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.security.KeyStore;
+import javax.net.ssl.*;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Server implements Runnable {
@@ -14,7 +15,7 @@ public class Server implements Runnable {
     private final ReentrantLock serverLock;
     private final ReentrantLock runningLock = new ReentrantLock();
 
-    private ServerSocket server;
+    private SSLServerSocket server;
     private volatile boolean running;
 
     public Server() {
@@ -32,7 +33,15 @@ public class Server implements Runnable {
 
             serverLock.lock();
             try {
-                server = new ServerSocket(port);
+                KeyStore ks = KeyStore.getInstance("JKS");
+                ks.load(new FileInputStream("config/serverkeystore.jks"), "password".toCharArray());
+                KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
+                kmf.init(ks, "password".toCharArray());
+                SSLContext sc = SSLContext.getInstance("TLS");
+                sc.init(kmf.getKeyManagers(), null, null);
+                SSLServerSocketFactory ssf = sc.getServerSocketFactory();
+
+                server = (SSLServerSocket) ssf.createServerSocket(port);
                 running = true;
                 System.out.println("Server started on port " + port);
             } finally {
@@ -41,7 +50,7 @@ public class Server implements Runnable {
 
             while (isRunning()) {
                 try {
-                    Socket client = server.accept();
+                    SSLSocket client = (SSLSocket) server.accept();
                     ConnectionHandler handler = new ConnectionHandler(client, this);
                     Thread.startVirtualThread(handler);
                 } catch (IOException e) {

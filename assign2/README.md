@@ -1,6 +1,6 @@
 # NoiaTalk
 
-## Configuration
+## Setup
 Before running the chat, ensure all necessary settings are configured in [config.json](config.json). 
 
 Example:
@@ -33,26 +33,38 @@ To connect as a client, run:
 ### Authentication
 By default, the following accounts are available for login:
 
-|Username|Password|
-|-|-|
-|alice|123|
-|bob|123|
+| Username | Password |
+|----------|----------|
+| alice    | 123      |
+| bob      | 123      |
 
 To add more accounts, modify the [user list](config/users.cfg).
 
 ## Commands
 
-### General Commands
-| Command | Description |
-|---------|-------------|
-| `/quit`| Disconnect from the server. |
-| `/room list`| Show available chat rooms.|
+### Authentication Commands
+| Command                           | Description   |
+|-----------------------------------|---------------|
+| `/login <username> <password>`    | Login user    |
+| `/register <username> <password>` | Register user |
 
-### Room Commands
-| Command | Description |
-|---------|-------------|
-| `/join <roomname>`| Join an existing room. |
+### In-Lobby Commands
+| Command                  | Description                                             |
+|--------------------------|---------------------------------------------------------|
+| `/join <roomname>`       | Join an existing room.                                  |
 | `/create <roomname> [1]` | Create a new room (use 1 to create an AI-powered room). |
+| `/room list`             | List the existing rooms.                                |
+| `/quit`                  | Disconnect from the server.                             |
+| `/room list`             | Show available chat rooms.                              |
+
+### In-Room Commands
+| Command                  | Description                                                      |
+|--------------------------|------------------------------------------------------------------|
+| `/join <roomname>`       | Switch to an existing room.                                      |
+| `/create <roomname> [1]` | Create and join a new room (use 1 to create an AI-powered room). |
+| `/info`                  | Show current room information                                    |
+| `/leave`                 | Back to lobby                                                    |
+
 
 
 ### AI-Powered Rooms
@@ -62,7 +74,7 @@ If you're in an AI-powered room, interact with the AI bot using:
 ```
 Example:
 ```
-/ai How are you?
+/ai Resume the chat
 ```
 
 

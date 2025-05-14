@@ -117,7 +117,7 @@ public class Room {
         lock.readLock().lock();
         try {
             return String.format(
-                    "==== ROOM INFORMATION ====\nName: %s\nType: %s\nAI-powered: %s\nUsers Online: %d\n===========================",
+                    "==== ROOM INFORMATION ====\nName: %s\nType: %s\nAI-powered: %s\nUsers Online: %d\n",
                     name,
                     isSystem ? "System" : "User-created",
                     isAI ? "Yes" : "No",

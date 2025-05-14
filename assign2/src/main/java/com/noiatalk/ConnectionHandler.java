@@ -6,15 +6,15 @@ import com.noiatalk.services.AuthService;
 import com.noiatalk.services.LLMService;
 import com.noiatalk.services.RoomManager;
 
+import javax.net.ssl.SSLSocket;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.Socket;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ConnectionHandler implements Runnable {
-    private final Socket client;
+    private final SSLSocket client;
     private final Server server;
     private final ReentrantLock roomLock = new ReentrantLock();
     private Room currentRoom;
@@ -23,7 +23,7 @@ public class ConnectionHandler implements Runnable {
     private String username;
     private volatile boolean connected;
 
-    public ConnectionHandler(Socket client, Server server) {
+    public ConnectionHandler(SSLSocket client, Server server) {
         this.client = client;
         this.server = server;
         this.connected = true;
@@ -47,6 +47,8 @@ public class ConnectionHandler implements Runnable {
     private void initializeStreams() throws IOException {
         out = new PrintWriter(client.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+
+        client.startHandshake();
     }
 
     private boolean authenticateUser() throws IOException {
@@ -194,20 +196,22 @@ public class ConnectionHandler implements Runnable {
                 return !createRoom(argument);
 
             case "/ai":
-                if (currentRoom == null || !currentRoom.isAI()) {
-                    sendMessage("This is not an AI-powered room.");
-                    return false;
-                }
                 if (argument == null) {
                     sendMessage("Usage: /ai <message>");
                     return false;
                 }
-                handleAIMessage(argument);
-                return false;
+                if (!handleAIMessage(argument)) {
+                    sendMessage("This is not an AI-powered room.");
+                    return false;
+                }
+                return true;
 
             case "/leave":
-                leaveRoom();
-                sendMessage("You have left the room.");
+                if (leaveRoom()) {
+                    sendMessage("You have left the room.");
+                } else {
+                    sendMessage("You are in lobby.");
+                }
                 return false;
 
             case "/info":
@@ -244,7 +248,7 @@ public class ConnectionHandler implements Runnable {
         }
     }
 
-    private void leaveRoom() {
+    private boolean leaveRoom() {
         roomLock.lock();
         try {
             if (currentRoom != null) {
@@ -256,7 +260,9 @@ public class ConnectionHandler implements Runnable {
                     RoomManager.removeRoom(room.getName());
                 }
                 currentRoom = null;
+                return true;
             }
+            return false;
         } finally {
             roomLock.unlock();
         }
@@ -287,12 +293,13 @@ public class ConnectionHandler implements Runnable {
         }
 
         RoomManager.createRoom(roomName, isAI);
-        return joinRoom(roomName);
+
+        return switchRoom(roomName);
     }
 
-    private void handleAIMessage(String userQuery) {
+    private boolean handleAIMessage(String userQuery) {
         Room room = getCurrentRoom();
-        if (room == null || !room.isAI()) return;
+        if (room == null || !room.isAI()) return false;
 
         try {
             String context = String.join("\n", room.getMessageHistory());
@@ -307,6 +314,7 @@ public class ConnectionHandler implements Runnable {
             sendMessage("AI failed to respond: " + e.getMessage());
             System.err.println("AI error: " + e.getMessage());
         }
+        return true;
     }
 
     private String promptInput(String prompt) throws IOException {
