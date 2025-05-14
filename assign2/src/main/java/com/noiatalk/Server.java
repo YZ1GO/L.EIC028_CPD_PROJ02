@@ -12,6 +12,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Server implements Runnable {
     private final ThreadSafeConnectionList connections;
     private final ReentrantLock serverLock;
+    private final ReentrantLock runningLock = new ReentrantLock();
+
     private ServerSocket server;
     private volatile boolean running;
 
@@ -65,14 +67,24 @@ public class Server implements Runnable {
         });
     }
 
-    public synchronized boolean isRunning() {
-        return running;
+    public boolean isRunning() {
+        runningLock.lock();
+        try {
+            return running;
+        } finally {
+            runningLock.unlock();
+        }
     }
 
-    public synchronized void shutdown() {
-        if (!running) return;
+    public void shutdown() {
+        runningLock.lock();
+        try {
+            if (!running) return;
+            running = false;
+        } finally {
+            runningLock.unlock();
+        }
 
-        running = false;
         serverLock.lock();
         try {
             if (server != null && !server.isClosed()) {

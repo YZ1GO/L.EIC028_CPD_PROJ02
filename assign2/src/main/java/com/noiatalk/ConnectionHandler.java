@@ -102,13 +102,13 @@ public class ConnectionHandler implements Runnable {
         displayRooms();
 
         while (connected && currentRoom == null) {
-            String input = promptInput("Enter a command (e.g., /join <roomname> or /create <roomname>):");
+            String input = promptInput("Enter a command (e.g., /join <roomname> or /create <roomname> [1 for AI room]):");
             if (input == null) {
                 return;
             }
 
             input = input.trim();
-            if (!handleCommand(input)) {
+            if (commandHandler(input)) {
                 sendMessage("Invalid command. Use /join <roomname>, /create <roomname>, or /room list.");
             } else if (currentRoom != null) {
                 handleChat();
@@ -133,7 +133,7 @@ public class ConnectionHandler implements Runnable {
             if (message.isEmpty()) continue;
 
             if (message.startsWith("/")) {
-                if (!handleCommand(message)) {
+                if (commandHandler(message)) {
                     sendMessage("Invalid command. Try again.");
                 }
                 if (currentRoom == null) {
@@ -157,7 +157,7 @@ public class ConnectionHandler implements Runnable {
         }
     }
 
-    private boolean handleCommand(String input) {
+    private boolean commandHandler(String input) {
         String[] parts = input.split("\\s+", 2);
         String command = parts[0].toLowerCase();
         String argument = (parts.length > 1) ? parts[1].trim() : null;
@@ -165,53 +165,58 @@ public class ConnectionHandler implements Runnable {
         switch (command) {
             case "/quit":
                 logout();
-                return true;
+                return false;
 
             case "/room":
                 if (argument != null && argument.equalsIgnoreCase("list")) {
                     displayRooms();
-                    return true;
+                    return false;
                 }
                 sendMessage("Usage: /room list");
-                return true;
+                return false;
 
             case "/join":
                 if (argument == null) {
                     sendMessage("Usage: /join <roomname>");
-                    return true;
+                    return false;
                 }
                 if (currentRoom == null) {
-                    return joinRoom(argument);
+                    return !joinRoom(argument);
                 } else {
-                    return switchRoom(argument);
+                    return !switchRoom(argument);
                 }
 
             case "/create":
                 if (argument == null) {
-                    sendMessage("Usage: /create <roomname> [AI room: 0|1]");
-                    return true;
+                    sendMessage("Usage: /create <roomname> [1 for AI room]");
+                    return false;
                 }
-                return createRoom(argument);
+                return !createRoom(argument);
 
             case "/ai":
                 if (currentRoom == null || !currentRoom.isAI()) {
                     sendMessage("This is not an AI-powered room.");
-                    return true;
+                    return false;
                 }
                 if (argument == null) {
                     sendMessage("Usage: /ai <message>");
-                    return true;
+                    return false;
                 }
                 handleAIMessage(argument);
-                return true;
+                return false;
 
             case "/leave":
                 leaveRoom();
                 sendMessage("You have left the room.");
-                return true;
+                return false;
+
+            case "/info":
+                if (currentRoom == null) return true;
+                sendMessage(currentRoom.getRoomInfo());
+                return false;
 
             default:
-                return false;
+                return true;
         }
     }
 
@@ -225,7 +230,13 @@ public class ConnectionHandler implements Runnable {
             Room room = RoomManager.getRoom(roomName);
             room.addUser(username);
             currentRoom = room;
-            sendMessage("You have joined room: " + roomName);
+
+            String message = String.format("You have joined room: %s", roomName);
+            if (room.isAI()) {
+                message += " (AI)";
+            }
+            sendMessage(message);
+
             server.broadcast(Message.createSystemMessage(username + " joined the room!"), room);
             return true;
         } finally {

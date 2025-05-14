@@ -1,9 +1,6 @@
 package com.noiatalk.models;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class Room {
@@ -11,8 +8,10 @@ public class Room {
     private final Set<String> users;
     private final boolean isSystem;
     private final boolean isAI;
-    private final List<String> messageHistory = new ArrayList<>();
+    private final Deque<String> messageHistory = new LinkedList<>();
     private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+
+    private static final int MAX_HISTORY_SIZE = 100;
 
     public Room(String name, boolean isSystem, boolean isAI) {
         this.name = name;
@@ -96,7 +95,10 @@ public class Room {
     public void addMessage(String message) {
         lock.writeLock().lock();
         try {
-            messageHistory.add(message);
+            if (messageHistory.size() >= MAX_HISTORY_SIZE) {
+                messageHistory.removeFirst();
+            }
+            messageHistory.addLast(message);
         } finally {
             lock.writeLock().unlock();
         }
@@ -106,6 +108,21 @@ public class Room {
         lock.readLock().lock();
         try {
             return new ArrayList<>(messageHistory);
+        } finally {
+            lock.readLock().unlock();
+        }
+    }
+
+    public String getRoomInfo() {
+        lock.readLock().lock();
+        try {
+            return String.format(
+                    "==== ROOM INFORMATION ====\nName: %s\nType: %s\nAI-powered: %s\nUsers Online: %d\n===========================",
+                    name,
+                    isSystem ? "System" : "User-created",
+                    isAI ? "Yes" : "No",
+                    users.size()
+            );
         } finally {
             lock.readLock().unlock();
         }
