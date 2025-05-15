@@ -17,7 +17,7 @@ public class Server implements Runnable {
     private final ReentrantLock runningLock = new ReentrantLock();
 
     private SSLServerSocket server;
-    private volatile boolean running;
+    private boolean running;
 
     public Server() {
         this.connections = new ThreadSafeConnectionList();

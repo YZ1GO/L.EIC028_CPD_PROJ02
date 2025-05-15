@@ -45,6 +45,7 @@ public class ConnectionHandler implements Runnable {
     }
 
     private void initializeStreams() throws IOException {
+        //client.setSoTimeout(60000);
         out = new PrintWriter(client.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
