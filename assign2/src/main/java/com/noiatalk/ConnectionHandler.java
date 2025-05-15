@@ -54,27 +54,28 @@ public class ConnectionHandler implements Runnable {
 
     private boolean authenticateUser() throws IOException {
         while (connected) {
-            out.println("Enter command: /login <username> <password> or /register <username> <password>");
+            out.println("Enter command: /login <username> <password>, /register <username> <password>, or /reconnect <token>");
             String input = in.readLine();
             if (input == null) {
                 return false;
             }
 
             String[] parts = input.trim().split("\\s+");
-            if (parts.length != 3) {
+            if (parts.length < 2) {
                 out.println("Invalid command format. Try again.");
                 continue;
             }
 
-            String command = parts[0];
-            String usernameInput = parts[1];
-            String passwordInput = parts[2];
+            String command = parts[0].toLowerCase();
 
             try {
-                switch (command.toLowerCase()) {
+                switch (command) {
+                    case "/reconnect":
+                        //todo
+
                     case "/login":
-                        if (AuthService.authenticate(usernameInput, passwordInput)) {
-                            this.username = usernameInput;
+                        if (AuthService.authenticate(parts[1], parts[2])) {
+                            this.username = parts[1];
                             out.println("Login successful. Welcome to the lobby.");
                             return true;
                         }
@@ -82,8 +83,8 @@ public class ConnectionHandler implements Runnable {
                         break;
 
                     case "/register":
-                        if (AuthService.register(usernameInput, passwordInput)) {
-                            this.username = usernameInput;
+                        if (AuthService.register(parts[1], parts[2])) {
+                            this.username = parts[1];
                             out.println("Registration successful. You are now logged in.");
                             return true;
                         }
@@ -91,7 +92,7 @@ public class ConnectionHandler implements Runnable {
                         break;
 
                     default:
-                        out.println("Unknown command. Use /login or /register.");
+                        out.println("Unknown command. Use /login, /register or /reconnect");
                 }
             } catch (Exception e) {
                 out.println("Authentication error: " + e.getMessage());
