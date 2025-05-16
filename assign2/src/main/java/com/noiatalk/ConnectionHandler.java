@@ -68,7 +68,7 @@ public class ConnectionHandler implements Runnable {
 
             String[] parts = input.trim().split("\\s+");
             if (parts.length < 2) {
-                sendMessage("Invalid command format. Try again.");
+                sendMessage("Invalid command format. Try again. For more commands, use /help.");
                 continue;
             }
 
@@ -160,7 +160,7 @@ public class ConnectionHandler implements Runnable {
 
             input = input.trim();
             if (commandHandler(input)) {
-                sendMessage("Invalid command. Use /join <roomname>, /create <roomname>, or /room list.");
+                sendMessage("Invalid command. Use /join <roomname>, /create <roomname>, or /room list. For more commands, use /help.");
             } else if (currentRoom != null) {
                 handleChat();
                 break;
@@ -185,7 +185,7 @@ public class ConnectionHandler implements Runnable {
 
             if (message.startsWith("/")) {
                 if (commandHandler(message)) {
-                    sendMessage("Invalid command. Try again.");
+                    sendMessage("Invalid command. Try again. For more commands, use /help.");
                 }
                 if (currentRoom == null) {
                     enterLobby();
@@ -213,6 +213,21 @@ public class ConnectionHandler implements Runnable {
         String argument = (parts.length > 1) ? parts[1].trim() : null;
 
         switch (command) {
+            case "/help":
+                sendMessage("Available commands:");
+                sendMessage("· /login <username> <password> - Log in with your credentials");
+                sendMessage("· /register <username> <password> - Register a new account");
+                sendMessage("· /reconnect <token> - Reconnect using a session token");
+                sendMessage("· /join <roomname> - Join an existing room");
+                sendMessage("· /create <roomname> [1 for AI room] - Create a new room (1 for AI, empty for regular)");
+                sendMessage("· /leave - Leave the current room");
+                sendMessage("· /room list - List all available rooms");
+                sendMessage("· /ai <message> - Send a message to the AI (in AI rooms only)");
+                sendMessage("· /info - Show information about the current room");
+                sendMessage("· /logout - Log out and end the session");
+                sendMessage("· /help - Display this help message");
+                return false;
+
             case "/logout":
                 explicitLogout();
                 return false;
@@ -248,6 +263,7 @@ public class ConnectionHandler implements Runnable {
                 return !createRoom(argument);
 
             case "/ai":
+                if (currentRoom == null) return true;
                 if (argument == null) {
                     sendMessage("Usage: /ai <message>");
                     return false;
@@ -259,6 +275,7 @@ public class ConnectionHandler implements Runnable {
                 return true;
 
             case "/leave":
+                if (currentRoom == null) return true;
                 if (leaveRoom()) {
                     sendMessage("You have left the room.");
                 } else {
@@ -337,7 +354,7 @@ public class ConnectionHandler implements Runnable {
             if (args[1].equals("1")) {
                 isAI = true;
             } else if (!args[1].equals("0")) {
-                sendMessage("Invalid second argument. Use 1 to create an AI room or 0 for regular room.");
+                sendMessage("Invalid second argument. Use 1 to create an AI room or let it empty for regular room.");
                 return false;
             }
         }

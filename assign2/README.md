@@ -42,6 +42,8 @@ To add more accounts, modify the [user list](config/users.cfg).
 
 ## Commands
 
+In case of any trouble, use `/help` :)
+
 ### Authentication Commands
 | Command                           | Description   |
 |-----------------------------------|---------------|
@@ -54,7 +56,7 @@ To add more accounts, modify the [user list](config/users.cfg).
 | `/join <roomname>`       | Join an existing room.                                  |
 | `/create <roomname> [1]` | Create a new room (use 1 to create an AI-powered room). |
 | `/room list`             | List the existing rooms.                                |
-| `/quit`                  | Disconnect from the server.                             |
+| `/logout`                | Disconnect from the server.                             |
 | `/room list`             | Show available chat rooms.                              |
 
 ### In-Room Commands
