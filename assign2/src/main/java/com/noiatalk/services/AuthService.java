@@ -1,5 +1,7 @@
 package com.noiatalk.services;
 
+import com.noiatalk.models.SessionData;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -8,14 +10,17 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class AuthService {
     private static final Path USER_FILE = Path.of("config/users.cfg");
     private static final String HASH_ALGORITHM = "SHA-256";
 
-    private static final Map<String, String> users = new HashMap<>(); // username -> password_hash
+    private static final Map<String, String> users = new HashMap<>();                   // username -> password_hash
     private static final Map<String, Boolean> loggedInUsers = new HashMap<>();
+    private static final Map<String, SessionData> sessionTokens = new HashMap<>();      // token -> session data
+
     private static final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
     static {
@@ -64,32 +69,34 @@ public class AuthService {
         return result.toString();
     }
 
-    public static boolean authenticate(String username, String password) {
+    public static String authenticate(String username, String password) {
         lock.writeLock().lock();
         try {
             if (loggedInUsers.containsKey(username)) {
-                return false;
+                return null;
             }
 
             String storedHash = users.get(username);
-            if (storedHash == null) return false;
+            if (storedHash == null) return null;
 
             String computedHash = hashPassword(password);
             if (storedHash.equals(computedHash)) {
                 loggedInUsers.put(username, true);
-                return true;
+                String token = UUID.randomUUID().toString();
+                sessionTokens.put(token, new SessionData(username, null));
+                return token;
             }
-            return false;
+            return null;
         } finally {
             lock.writeLock().unlock();
         }
     }
 
-    public static boolean register(String username, String password) {
+    public static String register(String username, String password) {
         lock.writeLock().lock();
         try {
             if (users.containsKey(username)) {
-                return false;
+                return null;
             }
 
             String hash = hashPassword(password);
@@ -100,13 +107,46 @@ public class AuthService {
                     username + ":" + hash + "\n",
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND);
 
-            return true;
+            loggedInUsers.put(username, true);
+            String token = UUID.randomUUID().toString();
+            sessionTokens.put(token, new SessionData(username, null));
+            return token;
         } catch (IOException e) {
             System.err.println("Failed to register user: " + e.getMessage());
             users.remove(username); // Rollback
-            return false;
+            return null;
         } finally {
             lock.writeLock().unlock();
+        }
+    }
+
+    public static SessionData reconnect(String token) {
+        lock.writeLock().lock();
+        try {
+            SessionData session = sessionTokens.get(token);
+            if (session == null || session.isExpired()) {
+                return null;
+            }
+            if (loggedInUsers.containsKey(session.getUsername())) {
+                return null;
+            }
+            loggedInUsers.put(session.getUsername(), true);
+            return session;
+        } finally {
+            lock.writeLock().unlock();
+        }
+    }
+
+    public static SessionData getSession(String token) {
+        lock.readLock().lock();
+        try {
+            SessionData session = sessionTokens.get(token);
+            if (session == null || session.isExpired()) {
+                return null;
+            }
+            return session;
+        } finally {
+            lock.readLock().unlock();
         }
     }
 
@@ -114,6 +154,28 @@ public class AuthService {
         lock.writeLock().lock();
         try {
             loggedInUsers.remove(username);
+            sessionTokens.entrySet().removeIf(entry -> entry.getValue().getUsername().equals(username));
+        } finally {
+            lock.writeLock().unlock();
+        }
+    }
+
+    public static void clearLoggedInUser(String username) {
+        lock.writeLock().lock();
+        try {
+            loggedInUsers.remove(username);
+        } finally {
+            lock.writeLock().unlock();
+        }
+    }
+
+    public static void updateSessionRoom(String token, String roomName) {
+        lock.writeLock().lock();
+        try {
+            SessionData session = sessionTokens.get(token);
+            if (session != null) {
+                session.setRoomName(roomName);
+            }
         } finally {
             lock.writeLock().unlock();
         }

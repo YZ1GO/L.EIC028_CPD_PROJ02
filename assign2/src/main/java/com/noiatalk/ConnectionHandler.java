@@ -2,6 +2,7 @@ package com.noiatalk;
 
 import com.noiatalk.models.Message;
 import com.noiatalk.models.Room;
+import com.noiatalk.models.SessionData;
 import com.noiatalk.services.AuthService;
 import com.noiatalk.services.LLMService;
 import com.noiatalk.services.RoomManager;
@@ -11,6 +12,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.Objects;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ConnectionHandler implements Runnable {
@@ -21,12 +23,16 @@ public class ConnectionHandler implements Runnable {
     private BufferedReader in;
     private PrintWriter out;
     private String username;
+    private String sessionToken;
+
     private volatile boolean connected;
+    private boolean isReconnection;
 
     public ConnectionHandler(SSLSocket client, Server server) {
         this.client = client;
         this.server = server;
         this.connected = true;
+        this.isReconnection = false;
     }
 
     @Override
@@ -40,7 +46,7 @@ public class ConnectionHandler implements Runnable {
         } catch (IOException e) {
             System.err.println("Connection error for " + username + ": " + e.getMessage());
         } finally {
-            logout();
+            cleanupConnection();
         }
     }
 
@@ -54,7 +60,7 @@ public class ConnectionHandler implements Runnable {
 
     private boolean authenticateUser() throws IOException {
         while (connected) {
-            out.println("Enter command: /login <username> <password>, /register <username> <password>, or /reconnect <token>");
+            sendMessage("Enter command: /login <username> <password>, /register <username> <password>, or /reconnect <token>");
             String input = in.readLine();
             if (input == null) {
                 return false;
@@ -62,7 +68,7 @@ public class ConnectionHandler implements Runnable {
 
             String[] parts = input.trim().split("\\s+");
             if (parts.length < 2) {
-                out.println("Invalid command format. Try again.");
+                sendMessage("Invalid command format. Try again.");
                 continue;
             }
 
@@ -71,31 +77,58 @@ public class ConnectionHandler implements Runnable {
             try {
                 switch (command) {
                     case "/reconnect":
-                        //todo
-
-                    case "/login":
-                        if (AuthService.authenticate(parts[1], parts[2])) {
-                            this.username = parts[1];
-                            out.println("Login successful. Welcome to the lobby.");
+                        if (parts.length != 2) {
+                            sendMessage("Usage: /reconnect <token>");
+                            continue;
+                        }
+                        SessionData session = AuthService.reconnect(parts[1]);
+                        if (session != null) {
+                            this.username = session.getUsername();
+                            this.sessionToken = parts[1];
+                            this.isReconnection = true;
+                            sendMessage("Reconnection successful. Welcome back, " + username + ". Your session token is: " + sessionToken);
                             return true;
                         }
-                        out.println("Invalid credentials or user already logged in.");
+                        sendMessage("Invalid, expired, or user already logged in.");
+                        break;
+
+                    case "/login":
+                        if (parts.length != 3) {
+                            sendMessage("Usage: /login <username> <password>");
+                            continue;
+                        }
+                        String loginToken = AuthService.authenticate(parts[1], parts[2]);
+                        if (loginToken != null) {
+                            this.username = parts[1];
+                            this.sessionToken = loginToken;
+                            this.isReconnection = false;
+                            sendMessage("Login successful. Welcome to the lobby. Your session token is: " + sessionToken);
+                            return true;
+                        }
+                        sendMessage("Invalid credentials or user already logged in.");
                         break;
 
                     case "/register":
-                        if (AuthService.register(parts[1], parts[2])) {
+                        if (parts.length != 3) {
+                            sendMessage("Usage: /register <username> <password>");
+                            continue;
+                        }
+                        String registerToken = AuthService.register(parts[1], parts[2]);
+                        if (registerToken != null) {
                             this.username = parts[1];
-                            out.println("Registration successful. You are now logged in.");
+                            this.sessionToken = registerToken;
+                            this.isReconnection = false;
+                            sendMessage("Registration successful. You are now logged in. Your session token is: " + sessionToken);
                             return true;
                         }
-                        out.println("Username already exists or invalid credentials.");
+                        sendMessage("Username already exists or invalid credentials.");
                         break;
 
                     default:
-                        out.println("Unknown command. Use /login, /register or /reconnect");
+                        sendMessage("Unknown command. Use /login, /register, or /reconnect");
                 }
             } catch (Exception e) {
-                out.println("Authentication error: " + e.getMessage());
+                sendMessage("Authentication error: " + e.getMessage());
             }
         }
         return false;
@@ -103,7 +136,21 @@ public class ConnectionHandler implements Runnable {
 
     private void enterLobby() throws IOException {
         currentRoom = null;
-        displayRooms();
+
+        if (isReconnection) {
+            isReconnection = false;
+            SessionData session = AuthService.getSession(sessionToken);
+            if (session != null && session.getRoomName() != null && RoomManager.isValidRoom(session.getRoomName())) {
+                System.out.println("Rejoining room for user: " + session.getUsername());
+                if (joinRoom(session.getRoomName())) {
+                    handleChat();
+                    return;
+                }
+            }
+            sendMessage("You are now in the lobby.");
+        } else {
+            displayRooms();
+        }
 
         while (connected && currentRoom == null) {
             String input = promptInput("Enter a command (e.g., /join <roomname> or /create <roomname> [1 for AI room]):");
@@ -141,7 +188,6 @@ public class ConnectionHandler implements Runnable {
                     sendMessage("Invalid command. Try again.");
                 }
                 if (currentRoom == null) {
-                    // User left the room, return to lobby
                     enterLobby();
                     break;
                 }
@@ -167,8 +213,8 @@ public class ConnectionHandler implements Runnable {
         String argument = (parts.length > 1) ? parts[1].trim() : null;
 
         switch (command) {
-            case "/quit":
-                logout();
+            case "/logout":
+                explicitLogout();
                 return false;
 
             case "/room":
@@ -187,7 +233,11 @@ public class ConnectionHandler implements Runnable {
                 if (currentRoom == null) {
                     return !joinRoom(argument);
                 } else {
-                    return !switchRoom(argument);
+                    boolean result = switchRoom(argument);
+                    if (!result) {
+                        sendMessage("You are already in " + currentRoom + " room.");
+                    }
+                    return false;
                 }
 
             case "/create":
@@ -236,6 +286,7 @@ public class ConnectionHandler implements Runnable {
             Room room = RoomManager.getRoom(roomName);
             room.addUser(username);
             currentRoom = room;
+            AuthService.updateSessionRoom(sessionToken, roomName);
 
             String message = String.format("You have joined room: %s", roomName);
             if (room.isAI()) {
@@ -262,6 +313,7 @@ public class ConnectionHandler implements Runnable {
                     RoomManager.removeRoom(room.getName());
                 }
                 currentRoom = null;
+                AuthService.updateSessionRoom(sessionToken, null);
                 return true;
             }
             return false;
@@ -271,6 +323,7 @@ public class ConnectionHandler implements Runnable {
     }
 
     private boolean switchRoom(String roomName) {
+        if (Objects.equals(roomName, currentRoom.getName())) return false;
         leaveRoom();
         return joinRoom(roomName);
     }
@@ -350,16 +403,47 @@ public class ConnectionHandler implements Runnable {
         }
     }
 
-    public void logout() {
+    private void explicitLogout() {
         if (username != null) {
             try {
                 leaveRoom();
                 AuthService.logout(username);
                 server.removeConnection(this);
+                System.out.println(username + " logged out");
+            } finally {
+                shutdown();
+            }
+        }
+    }
+
+    private void cleanupConnection() {
+        if (username != null) {
+            try {
+                cleanupRoomMembership();
+                AuthService.clearLoggedInUser(username);
+                server.removeConnection(this);
                 System.out.println(username + " disconnected");
             } finally {
                 shutdown();
             }
+        }
+    }
+
+    private void cleanupRoomMembership() {
+        roomLock.lock();
+        try {
+            if (currentRoom != null) {
+                Room room = currentRoom;
+                int userCount = room.getUserCount();
+                room.removeUser(username);
+                server.broadcast(Message.createSystemMessage(username + " left the room"), room);
+                if (userCount == 1 && !room.isSystem()) {
+                    RoomManager.removeRoom(room.getName());
+                }
+                currentRoom = null;
+            }
+        } finally {
+            roomLock.unlock();
         }
     }
 }
