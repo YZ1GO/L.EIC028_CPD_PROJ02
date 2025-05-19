@@ -1,4 +1,8 @@
-# NoiaTalk
+
+<div align="center">
+    <img src="assets/noiatalk-logo.png" width="500">
+</div>
+
 
 ## Setup
 Before running the chat, ensure all necessary settings are configured in [config.json](config.json). 
