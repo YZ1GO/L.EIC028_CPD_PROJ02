@@ -75,4 +75,3 @@ bin/
 .idea/runConfigurations/
 
 .env
-config.json

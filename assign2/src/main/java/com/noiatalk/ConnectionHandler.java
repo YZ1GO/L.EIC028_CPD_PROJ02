@@ -340,6 +340,7 @@ public class ConnectionHandler implements Runnable {
     }
 
     private boolean switchRoom(String roomName) {
+        if (currentRoom == null) return joinRoom(roomName);
         if (Objects.equals(roomName, currentRoom.getName())) return false;
         leaveRoom();
         return joinRoom(roomName);
