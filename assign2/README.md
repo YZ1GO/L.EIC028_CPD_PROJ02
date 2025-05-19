@@ -3,6 +3,13 @@
     <img src="assets/noiatalk-logo.png" width="500">
 </div>
 
+## Content
+- [General Setup](#setup)
+- [Local LLM](#local-llm)
+- [Getting Started](#getting-started)
+- [Authentication](#authentication)
+- [Commands](#commands)
+- [LAN Setup](#lan-setup)
 
 ## Setup
 Before running the chat, ensure all necessary settings are configured in [config.json](config.json). 
@@ -51,10 +58,11 @@ To add more default accounts, modify the [user list](config/users.cfg).
 In case of any trouble, use `/help` :)
 
 ### Authentication Commands
-| Command                           | Description   |
-|-----------------------------------|---------------|
-| `/login <username> <password>`    | Login user    |
-| `/register <username> <password>` | Register user |
+| Command                           | Description                   |
+|-----------------------------------|-------------------------------|
+| `/login <username> <password>`    | Login user                    |
+| `/register <username> <password>` | Register user                 |
+| `/reconnect <token>`              | Reconnect using session token |
 
 ### In-Lobby Commands
 | Command                  | Description                                             |
@@ -91,7 +99,7 @@ Example:
 Chat Between Machines on the Same Network.
 
 ### Server Configuration
-Open your [config.json](config.json).  and change the host to allow external connections:
+Open your [config.json](config.json) and change the host to allow external connections:
 
 ```
 {
@@ -122,7 +130,7 @@ Run these commands on the server's host machine to get its local IP address:
     ```
 
 ### Client Configuration
-On any other device on the same Wi-Fi or LAN, update the config.json to use the server’s IP address:
+On any other device on the same Wi-Fi or LAN, update the [config.json](config.json) to use the server’s IP address:
 
 ```
 {
