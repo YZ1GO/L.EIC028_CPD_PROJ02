@@ -1,0 +1,6 @@
+{
+  "SOCKET_HOST" : "localhost",
+  "SOCKET_PORT" : "8008",
+  "LLM_URL" : "http://127.0.0.1:1234",
+  "MODEL" : "qwen2.5-coder-3b-instruct"
+}
