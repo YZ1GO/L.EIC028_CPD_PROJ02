@@ -266,13 +266,13 @@ public class ConnectionHandler implements Runnable {
                 if (currentRoom == null) return true;
                 if (argument == null) {
                     sendMessage("Usage: /ai <message>");
-                    return false;
+                    return true;
                 }
                 if (!handleAIMessage(argument)) {
                     sendMessage("This is not an AI-powered room.");
-                    return false;
+                    return true;
                 }
-                return true;
+                return false;
 
             case "/leave":
                 if (currentRoom == null) return true;
