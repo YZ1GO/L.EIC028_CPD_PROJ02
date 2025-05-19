@@ -44,7 +44,7 @@ By default, the following accounts are available for login:
 | joao     | 123      |
 | maria    | 123      |
 
-To add more accounts, modify the [user list](config/users.cfg).
+To add more default accounts, modify the [user list](config/users.cfg).
 
 ## Commands
 
@@ -63,7 +63,6 @@ In case of any trouble, use `/help` :)
 | `/create <roomname> [1]` | Create a new room (use 1 to create an AI-powered room). |
 | `/room list`             | List the existing rooms.                                |
 | `/logout`                | Disconnect from the server.                             |
-| `/room list`             | Show available chat rooms.                              |
 
 ### In-Room Commands
 | Command                  | Description                                                      |
@@ -71,7 +70,9 @@ In case of any trouble, use `/help` :)
 | `/join <roomname>`       | Switch to an existing room.                                      |
 | `/create <roomname> [1]` | Create and join a new room (use 1 to create an AI-powered room). |
 | `/info`                  | Show current room information                                    |
+| `/room list`             | List the existing rooms.                                         |
 | `/leave`                 | Back to lobby                                                    |
+| `/logout`                | Disconnect from the server.                                      |
 
 
 
