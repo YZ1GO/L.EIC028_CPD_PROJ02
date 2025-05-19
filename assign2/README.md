@@ -37,6 +37,8 @@ By default, the following accounts are available for login:
 |----------|----------|
 | alice    | 123      |
 | bob      | 123      |
+| joao     | 123      |
+| maria    | 123      |
 
 To add more accounts, modify the [user list](config/users.cfg).
 
@@ -80,7 +82,49 @@ Example:
 ```
 
 
+## LAN Setup
+Chat Between Machines on the Same Network.
 
+### Server Configuration
+Open your [config.json](config.json).  and change the host to allow external connections:
 
+```
+{
+  "SOCKET_HOST" : "0.0.0.0",
+  "SOCKET_PORT" : "8008",
+  "LLM_URL" : "http://127.0.0.1:1234",
+  "MODEL" : "deepseek-r1"
+}
+```
 
+- `SOCKET_HOST: "0.0.0.0"` binds the server to all network interfaces, allowing LAN access.
+
+Run these commands on the server's host machine to get its local IP address:
+- Linux:
+    ```bash
+    hostname -I
+    ```
+
+- MacOS
+    ```bash
+    ipconfig getifaddr en0    # for WIFI
+    ipconfig getifaddr en1    # for Ethernet
+    ```
+
+- Windows
+    ```shell
+    ipconfig
+    ```
+
+### Client Configuration
+On any other device on the same Wi-Fi or LAN, update the config.json to use the server’s IP address:
+
+```
+{
+  "SOCKET_HOST" : "Replace with the server's IP",
+  "SOCKET_PORT" : "8008",
+  "LLM_URL" : "http://127.0.0.1:1234",
+  "MODEL" : "deepseek-r1"
+}
+```
 

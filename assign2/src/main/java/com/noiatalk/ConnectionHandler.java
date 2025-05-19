@@ -382,6 +382,12 @@ public class ConnectionHandler implements Runnable {
             room.addMessage("BOT: " + llmResponse);
 
             Message aiMessage = Message.createUserMessage("BOT", llmResponse);
+
+            // send query to all users to know what he asked
+            Message userMessage = Message.createUserMessage(username, "Asked BOT \"" + userQuery + "\".");
+            room.addMessage(username + ": " + userMessage);
+            server.broadcast(userMessage, room);
+
             server.broadcast(aiMessage, room);
         } catch (Exception e) {
             sendMessage("AI failed to respond: " + e.getMessage());
